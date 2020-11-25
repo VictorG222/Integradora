@@ -37,10 +37,10 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-sm-6 col-md-6">
-					<p class="bold text-left">Lunes - Viernes, 10am a 1pm, 4pm a 7pm </p>
+					<p class="bold text-left">Horario de atencion: Lunes a Viernes. De 7:00 a.m. a 1:00 p.m. por la mañana y De 4:00 p.m. a 7:00 p.m. por la tarde.</p>
 					</div>
 					<div class="col-sm-6 col-md-6">
-					<p class="bold text-right">Llámenos 534 6869</p>
+					<p class="bold text-right">Comuniquese al 534-6869</p>
 					</div>
 				</div>
 			</div>
@@ -114,13 +114,13 @@
 											<div class="col-xs-6 col-sm-6 col-md-6">
 												<div class="form-group">
 													<div class="form-group">
-														<input type="email" class="form-control" id="email" placeholder="Correo Electronico">
+														<input type="email" class="form-control" id="email" placeholder="Correo Electronico" required>
 													</div>
 												</div>
 											</div>
 											<div class="col-xs-6 col-sm-6 col-md-6">
 												<div class="form-group">
-													<input type="password" class="form-control" id="pwd" placeholder="Contraseña">
+													<input type="password" class="form-control" id="pwd" placeholder="Contraseña" required>
 												</div>	
 											</div>
 										</div>
@@ -464,46 +464,7 @@
 	</section>
 	<!-- /Section: works -->
 	
-	<section id="partner" class="home-section paddingbot-60">	
-		<div class="container marginbot-50">
-			<div class="row">
-				<div class="col-lg-8 col-lg-offset-2">
-					<div class="wow lightSpeedIn" data-wow-delay="0.1s">
-					<div class="section-heading text-center">
-					<h2 class="h-bold">Asociados</h2>
-					<p>Aceptamos su sistema de aseguranza</p>
-					</div>
-					</div>
-					<div class="divider-short"></div>
-				</div>
-			</div>
-		</div>
-		
-           <div class="container">
-				<div class="row">
-					<div class="col-sm-6 col-md-3">
-						<div class="partner">
-						<a href="#"><img src="../img/dummy/partner-1.jpg" alt="" /></a>
-						</div>
-					</div>
-					<div class="col-sm-6 col-md-3">
-						<div class="partner">
-						<a href="#"><img src="../img/dummy/partner-2.jpg" alt="" /></a>
-						</div>
-					</div>
-					<div class="col-sm-6 col-md-3">
-						<div class="partner">
-						<a href="#"><img src="../img/dummy/partner-3.jpg" alt="" /></a>
-						</div>
-					</div>
-					<div class="col-sm-6 col-md-3">
-						<div class="partner">
-						<a href="#"><img src="../img/dummy/partner-4.jpg" alt="" /></a>
-						</div>
-					</div>
-				</div>
-            </div>
-	</section>	
+	
 
 	<footer>
 	
@@ -555,6 +516,9 @@
 									<i class="fa fa-circle fa-stack-2x"></i>
 									<i class="fa fa-envelope-o fa-stack-1x fa-inverse"></i>
 								</span> contacto@masterclinician.com
+							</li>
+							<li>
+								<img src="../img/photo/02 Panda Programming.png" alt="" style="width: 30%; height: 30%;"/>
 							</li>
 
 						</ul>
