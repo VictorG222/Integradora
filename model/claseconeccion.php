@@ -36,6 +36,32 @@ class Conection{
         }
     } 
 
+    public function insertpaciente($nombre_completo, $fecha_de_nacimiento, $genero, $tipo_de_sangre, $peso, $estatura, $direccion, $correo_electronico, $contraseña, $telefono_de_casa, $telefono_movil, $enfermedades, $alergias, $cirugias_y_accidentes){
+
+        $sql = "CALL web_sp_insertpaciente(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+        $statement = $this->conn->prepare($sql);
+        $statement->bindParam(1,$nombre_completo);
+        $statement->bindParam(2,$fecha_de_nacimiento);
+        $statement->bindParam(3,$genero);
+        $statement->bindParam(4,$tipo_de_sangre);
+        $statement->bindParam(5,$peso);
+        $statement->bindParam(6,$estatura);
+        $statement->bindParam(7,$direccion);
+        $statement->bindParam(8,$correo_electronico);
+        $statement->bindParam(9,$contraseña);
+        $statement->bindParam(10,$telefono_de_casa);
+        $statement->bindParam(11,$telefono_movil);
+        $statement->bindParam(12,$enfermedades);
+        $statement->bindParam(13,$alergias);
+        $statement->bindParam(14,$cirugias_y_accidentes);
+
+        if($statement->execute()){
+            return "Perfil creado";
+        }
+        else{
+            return "Perfil no creado";
+        }
+
     
 
     public function updatePaciente($nombre_completo, $fecha_de_nacimiento, $genero, $tipo_de_sangre, $peso, $estatura, $direccion, $correo_electronico, $contraseña, $telefono_de_casa, $telefono_movil, $enfermedades, $alergias, $cirugias_y_accidentes){
@@ -91,6 +117,37 @@ class Conection{
             }
         }
         
+    }
+
+    public function listarcitas(){
+        $sql = "CALL web_sp_citaslist()";
+        $statement = $this->conn->prepare($sql);
+        
+        if($statement->execute()){
+
+            $result = $statement->fetchAll(PDO::FETCH_ASSOC);
+            return $result;
+
+        }
+    }
+
+
+    function delete($){
+
+        $sql = "CALL web_sp_delete(?)";
+        $statement = $this->conn->prepare($sql);
+        $statement->bindParam(1,$email);
+
+        if($statement->execute()){
+
+            $count=$statement->rowCount();
+            if($count){
+                return "ELIMINADO";
+            }else{
+                return "ELIMINADO";
+            }
+        }
+
     }
 
 }
