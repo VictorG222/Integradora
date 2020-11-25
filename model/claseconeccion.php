@@ -36,7 +36,7 @@ class Conection{
         }
     } 
 
-    public function insertpaciente($nombre_completo, $fecha_de_nacimiento, $genero, $tipo_de_sangre, $peso, $estatura, $direccion, $correo_electronico, $contraseña, $telefono_de_casa, $telefono_movil, $enfermedades, $alergias, $cirugias_y_accidentes){
+    public function insertPaciente($nombre_completo, $fecha_de_nacimiento, $genero, $tipo_de_sangre, $peso, $estatura, $direccion, $correo_electronico, $contraseña, $telefono_de_casa, $telefono_movil, $enfermedades, $alergias, $cirugias_y_accidentes){
 
         $sql = "CALL web_sp_insertpaciente(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
         $statement = $this->conn->prepare($sql);
@@ -61,7 +61,7 @@ class Conection{
         else{
             return "Perfil no creado";
         }
-
+    }
     
 
     public function updatePaciente($nombre_completo, $fecha_de_nacimiento, $genero, $tipo_de_sangre, $peso, $estatura, $direccion, $correo_electronico, $contraseña, $telefono_de_casa, $telefono_movil, $enfermedades, $alergias, $cirugias_y_accidentes){
@@ -120,8 +120,10 @@ class Conection{
     }
 
     public function listarcitas(){
-        $sql = "CALL web_sp_citaslist()";
+        $sql = "CALL web_sp_citaslist(?)";
         $statement = $this->conn->prepare($sql);
+
+        $statement->bindParam(1,$correo_electronico);
         
         if($statement->execute()){
 
@@ -132,7 +134,7 @@ class Conection{
     }
 
 
-    function delete($){
+    function delete(){
 
         $sql = "CALL web_sp_delete(?)";
         $statement = $this->conn->prepare($sql);

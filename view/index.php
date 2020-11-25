@@ -113,22 +113,20 @@
 										<div class="row">
 											<div class="col-xs-6 col-sm-6 col-md-6">
 												<div class="form-group">
-													<div id="error"></div>
 													<div class="form-group">
-														<input type="email" class="form-control" id="email" placeholder="Correo Electronico" required>
+														<input type="email" class="form-control" id="email" placeholder="Correo Electronico">
 													</div>
 												</div>
 											</div>
 											<div class="col-xs-6 col-sm-6 col-md-6">
 												<div class="form-group">
-													<input type="password" class="form-control" id="pwd" placeholder="Contraseña" required>
-													
+													<input type="password" class="form-control" id="pwd" placeholder="Contraseña">
 												</div>	
 											</div>
 										</div>
 										
 										<button type="text" id="button" class="btn btn-primary btn-skin btn-block btn-lg">Iniciar sesion</button>
-									
+										<div id="error"></div>
 									</form>
 								</div>
 							</div>				
@@ -627,13 +625,13 @@
 </body>
 <script>
 	$(document).ready(function(){
-        $("#submit").click(function(){
+        $("#button").click(function(){
             var correo_electronico = $("#email").val();
-            var contraseña = $("#contraseña").val();
+            var contraseña = $("#pwd").val();
 
-            if (correo_electronico == "" || contraseña == ""){
-                $("#error").text("Campos vacios");
-                $("#error").css("color","red");
+            if (correo_electronico == null || contraseña == null){
+                $($error).text("Campos vacios");
+                $($error).css("color","red");
             }
             else
             {
@@ -643,6 +641,7 @@
                     contraseña: contraseña
                 },
                 function(data,status){
+				
                 
                 var obj = JSON.parse(data);
 
