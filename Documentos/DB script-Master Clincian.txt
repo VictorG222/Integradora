@@ -113,4 +113,20 @@ call master_clinician.web_sp_insertpaciente('Victor', '2000-02-11', 'Masculino',
 
 SELECT * FROM pacientes;
 
+
+
+INSERT INTO `master_clinician`.`medicos` (`nombre_completo`, `cedula_profesional`, `especialidad`) VALUES ('Roberto Jaime Palacio Gaxiola', '9573168492', 'Cardiología');
+INSERT INTO `master_clinician`.`medicos` (`nombre_completo`, `cedula_profesional`, `especialidad`) VALUES ('Laura Silvia Perez Garcia', '7214685394', 'Cardiología');
+
+
+
+UPDATE `master_clinician`.`pacientes` SET `nombre_completo` = 'Victor Manuel Galvan Covarrubias', `tipo_de_sangre` = 'O+', `peso` = '85', `estatura` = '1.70', `direccion` = 'Avenida Flores A 30 y 31', `alergias` = 'Ambroxol', `cirugias_y_accidentes` = 'Apendicitis' WHERE (`paciente_id` = '1');
+INSERT INTO `master_clinician`.`pacientes` (`nombre_completo`, `fecha_de_nacimiento`, `genero`, `tipo_de_sangre`, `peso`, `estatura`, `direccion`, `correo_electronico`, `contraseña`, `telefono_de_casa`, `telefono_movil`, `enfermedades`, `alergias`, `cirugias_y_accidentes`) VALUES ('Juan Meza Alvarez', '2000-21-11', 'Masculino', 'O-', '80', '1.76', 'Avenida Madero 13 y 14', 'inserteuncorreoelectronico@gmail.com', '123456789', '6531326854', '653491132', 'n/a', 'n/a', 'n/a');
+
+INSERT INTO `master_clinician`.`citas` (`fecha`, `hora`, `fecha_de_cancelacion`,`fk_medico_id`,`fk_paciente_id`) VALUES ('2021-06-12', '2021-5-11 7:00:00', ' ','1','2');
+INSERT INTO `master_clinician`.`citas` (`fecha`, `hora`, `fecha_de_cancelacion`,`fk_medico_id`,`fk_paciente_id`) VALUES ('2021-05-11', '2021-5-11 7:00:00', ' ','1','1');
+INSERT INTO `master_clinician`.`citas` (`fecha`, `hora`, `fecha_de_cancelacion`,`fk_medico_id`,`fk_paciente_id`) VALUES ('2021-04-10', '2021-04-10 7:00:00', ' ','1','1');
+
+
+
 DROP DATABASE master_clinician;
