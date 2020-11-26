@@ -7,7 +7,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>¡Bienvenido a Master Clinician!</title>
+    <title>Mi perfil - Master Clinician</title>
 	
     <!-- css -->
     <link href="../css/bootstrap.min.css" rel="stylesheet" type="text/css">
@@ -51,7 +51,7 @@
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
                     <i class="fa fa-bars"></i>
                 </button>
-                <a class="navbar-brand" href="index.php">
+                <a class="navbar-brand" href="index.html">
                     <img src="../img/logo.png" alt="" width="150" height="40" />
                 </a>
             </div>
@@ -59,11 +59,9 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
 			  <ul class="nav navbar-nav">
-				<li class="active"><a href="#intro">Inicio</a></li>
-				<li><a href="#service">Servicios</a></li>
-				<li><a href="#doctor">Médicos</a></li>
-				<li><a href="#facilities">Instalaciones</a></li>
-				<li><a href="registro.php">Registrarse</a></li>
+				<li><a href="modificar.php">Modificar datos</a></li>				
+				<li class="active"><a href="#intro">Cerrar sesion</a></li>
+
 				  </ul>
 				</li>
 			  </ul>
@@ -79,124 +77,52 @@
 		<div class="intro-content">
 			<div class="container">
 				<div class="row">
-					<div class="col-lg-6">
+					<div class="col-xl">
 					<div class="wow fadeInDown" data-wow-offset="0" data-wow-delay="0.1s">
-					<h2 class="h-ultra">Bienvenido</h2>
-					</div>
-					<div class="wow fadeInUp" data-wow-offset="0" data-wow-delay="0.1s">
-					<h4 class="h-light">Agendado de citas <span class="color">de la manera más sencilla</span>
-					</div>
-						<div class="well well-trans">
-						<div class="wow fadeInRight" data-wow-delay="0.1s">
-
-						<ul class="lead-list">
-							<li><span class="fa fa-check fa-2x icon-success"></span> <span class="list"><strong>Registrese</strong><br />Ingrese sus datos y preferencias</span></li>
-							<li><span class="fa fa-check fa-2x icon-success"></span> <span class="list"><strong>Consulte</strong><br />Escoge entre nuestra seleccion de especialidades médicas</span></li>
-							<li><span class="fa fa-check fa-2x icon-success"></span> <span class="list"><strong>Agende</strong><br />Agende su cita en cualquier momento</span></li>
-						</ul>
-
-						</div>
-						</div>
-
 
 					</div>
-					<div class="col-lg-6">
+					<div class="col-xl">
 						<div class="form-wrapper">
 						<div class="wow fadeInRight" data-wow-duration="2s" data-wow-delay="0.2s">
 						
 							<div class="panel panel-skin">
 							<div class="panel-heading">
-									<h3 class="panel-title"><span class="fa fa-pencil-square-o"></span> Inicio de sesión</h3>
+									<h3 class="panel-title"><span class="fa fa-pencil-square-o"></span> Citas agendadas</h3>
 									</div>
 									<div class="panel-body">
 									<form role="form" class="lead">
 										<div class="row">
-											<div class="col-xs-6 col-sm-6 col-md-6">
-												<div class="form-group">
-													<div class="form-group">
-														<input type="email" class="form-control" id="email" placeholder="Correo Electronico" required>
-													</div>
+											<div class="col-xs-6 col-sm-6 col-sm-6 col">
+												<div class="container">                                                                                   
+  
+												  <div class="table-responsive">
+												    <table class="table table-bordered">
+												      <thead>
+												        <tr>
+												          <th>Fecha</th>
+												          <th>Hora</th>
+												          <th>Paciente</th>
+												          <th>Medico</th>
+												          <th>Fecha de cancelacion</th>
+												        </tr>
+												      </thead>
+												      <tbody>
+												        <tr>
+												        </tr>
+												      </tbody>
+												    </table>
+												  </div>
 												</div>
-											</div>
-											<div class="col-xs-6 col-sm-6 col-md-6">
-												<div class="form-group">
-													<input type="password" class="form-control" id="pwd" placeholder="Contraseña" required>
-												</div>	
-											</div>
-										</div>
-										
-										<button type="text" id="button" class="btn btn-primary btn-skin btn-block btn-lg">Iniciar sesion</button>
-										<div id="error"></div>
-									</form>
-								</div>
-							</div>				
-						
-						</div>
-						</div>
-					</div>					
-				</div>		
-			</div>
-		</div>		
-    </section>
-	
-	<!-- /Section: intro -->
-
-	<!-- Section: boxes -->
-    <section id="boxes" class="home-section paddingtop-80">
-	
-		<div class="container">
-			<div class="row">
-				<div class="col-sm-3 col-md-3">
-					<div class="wow fadeInUp" data-wow-delay="0.2s">
-						<div class="box text-center">
-							
-							<i class="fa fa-check fa-3x circled bg-skin"></i>
-							<h4 class="h-bold">Inicie sesión</h4>
-							<p>
-							Inicie sesión para acceder a los beneficios de Master Clinician
-							</p>
-						</div>
-					</div>
-				</div>
-				<div class="col-sm-3 col-md-3">
-					<div class="wow fadeInUp" data-wow-delay="0.2s">
-						<div class="box text-center">
-							
-							<i class="fa fa-list-alt fa-3x circled bg-skin"></i>
-							<h4 class="h-bold">Consulte</h4>
-							<p>
-							Seleccione la hora disponible para agendar su cita
-							</p>
-						</div>
-					</div>
-				</div>
-				<div class="col-sm-3 col-md-3">
-					<div class="wow fadeInUp" data-wow-delay="0.2s">
-						<div class="box text-center">
-							<i class="fa fa-user-md fa-3x circled bg-skin"></i>
-							<h4 class="h-bold">Especialistas</h4>
-							<p>
-							Nuestras instalaciones cuentan con especialistas certificados
-							</p>
-						</div>
-					</div>
-				</div>
-				<div class="col-sm-3 col-md-3">
-					<div class="wow fadeInUp" data-wow-delay="0.2s">
-						<div class="box text-center">
-							
-							<i class="fa fa-hospital-o fa-3x circled bg-skin"></i>
-							<h4 class="h-bold">Diagnostico</h4>
-							<p>
-							Reciba su diagnostico de parte de especialistas de primera clase
-							</p>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-
-	</section>
+																						<div class="panel-body">
+																						<form role="form" class="lead">		
+																			
+																			</div>
+																			</div>
+																		</div>					
+																	</div>		
+																</div>
+															</div>		
+													    </section>
 	<!-- /Section: boxes -->
 	
 	
@@ -209,15 +135,15 @@
 								<div class="col-md-8">
 									<div class="wow fadeInUp" data-wow-delay="0.1s">
 									<div class="cta-text">
-									<h3>¿Necesita agendar una cita?</h3>
-									<p>Inicie sesión y agende una cita de inmediato. Es totalmente grátis.</p>
+									<h3>¿Su cita programada no se muestra?</h3>
+									<p>Actualice su lista de citas agendadas.</p>
 									</div>
 									</div>
 								</div>
 								<div class="col-md-4">
 									<div class="wow lightSpeedIn" data-wow-delay="0.1s">
 										<div class="cta-btn">
-										<a href="#" class="btn btn-skin btn-lg">Inicie sesión</a>	
+										<a href="#" class="btn btn-skin btn-lg">Actualizar</a>	
 										</div>
 									</div>
 								</div>
@@ -237,84 +163,20 @@
         <div class="row">
 			<div class="col-sm-6 col-md-6">
 				<div class="wow fadeInUp" data-wow-delay="0.2s">
-				<img src="../img/dummy/img-1.jpg" class="img-responsive" alt="" />
 				</div>
             </div>
 			<div class="col-sm-3 col-md-3">
 				
-				<div class="wow fadeInRight" data-wow-delay="0.1s">
-                <div class="service-box">
-					<div class="service-icon">
-						<span class="fa fa-stethoscope fa-3x"></span> 
 					</div>
-					<div class="service-desc">
-						<h5 class="h-light">Chequeo médico</h5>
-						<p>.</p>
-					</div>
-                </div>
-				</div>
-				
-				<div class="wow fadeInRight" data-wow-delay="0.2s">
-				<div class="service-box">
-					<div class="service-icon">
-						<span class="fa fa-wheelchair fa-3x"></span> 
-					</div>
-					<div class="service-desc">
-						<h5 class="h-light">Servicio de enfermeria</h5>
-						<p>.</p>
-					</div>
-                </div>
-				</div>
-				<div class="wow fadeInRight" data-wow-delay="0.3s">
-				<div class="service-box">
-					<div class="service-icon">
-						<span class="fa fa-plus-square fa-3x"></span> 
-					</div>
-					<div class="service-desc">
-						<h5 class="h-light">Farmacia</h5>
-						<p>.</p>
-					</div>
-                </div>
-				</div>
 
 
             </div>
-			<div class="col-sm-3 col-md-3">
-				
-				<div class="wow fadeInRight" data-wow-delay="0.1s">
-                <div class="service-box">
-					<div class="service-icon">
-						<span class="fa fa-h-square fa-3x"></span> 
-					</div>
-					<div class="service-desc">
-						<h5 class="h-light">Ginecología</h5>
-						<p>.</p>
-					</div>
-                </div>
-				</div>
-				
-				<div class="wow fadeInRight" data-wow-delay="0.2s">
-				<div class="service-box">
-					<div class="service-icon">
-						<span class="fa fa-filter fa-3x"></span> 
-					</div>
-					<div class="service-desc">
-						<h5 class="h-light">Neurología</h5>
-						<p>.</p>
-					</div>
-                </div>
 				</div>
 				<div class="wow fadeInRight" data-wow-delay="0.3s">
 				<div class="service-box">
 					<div class="service-icon">
 						<span class="fa fa-user-md fa-3x"></span> 
 					</div>
-					<div class="service-desc">
-						<h5 class="h-light">Cuidado del sueño</h5>
-						<p>.</p>
-					</div>
-                </div>
-				</div>
 
             </div>
 			
@@ -354,7 +216,7 @@
             <div id="grid-container" class="cbp-l-grid-team">
                 <ul>
                     <li class="cbp-item psychiatrist">
-                        <a href="doctors/member1.html" class="cbp-caption cbp-singlePage">
+                        <a href="../doctors/member1.html" class="cbp-caption cbp-singlePage">
                             <div class="cbp-caption-defaultWrap">
                                 <img src="../img/team/1.jpg" alt="" width="100%">
                             </div>
@@ -370,7 +232,7 @@
                         <div class="cbp-l-grid-team-position">Psiquiatra</div>
                     </li>
                     <li class="cbp-item cardiologist">
-                        <a href="doctors/member2.html" class="cbp-caption cbp-singlePage">
+                        <a href="../doctors/member2.html" class="cbp-caption cbp-singlePage">
                             <div class="cbp-caption-defaultWrap">
                                 <img src="../img/team/2.jpg" alt="" width="100%">
                             </div>
@@ -462,9 +324,6 @@
             </div>
 		</div>
 	</section>
-	<!-- /Section: works -->
-	
-	
 
 	<footer>
 	
@@ -516,9 +375,6 @@
 									<i class="fa fa-circle fa-stack-2x"></i>
 									<i class="fa fa-envelope-o fa-stack-1x fa-inverse"></i>
 								</span> contacto@masterclinician.com
-							</li>
-							<li>
-								<img src="../img/photo/02 Panda Programming.png" alt="" style="width: 30%; height: 30%;"/>
 							</li>
 
 						</ul>
@@ -587,40 +443,5 @@
 
 
 </body>
-<script>
-	$(document).ready(function(){
-        $("#button").click(function(){
-            var correo_electronico = $("#email").val();
-            var contraseña = $("#pwd").val();
-
-            if (correo_electronico == null || contraseña == null){
-                $($error).text("Campos vacios");
-                $($error).css("color","red");
-            }
-            else
-            {
-                $.post("../controller/controller_login.php",
-                {
-                    correo_electronico: correo_electronico,
-                    contraseña: contraseña
-                },
-                function(data,status){
-				
-                
-                var obj = JSON.parse(data);
-
-                    if(obj.estado == true)
-                    {
-                        window.location.replace("Perfil.php");
-                    }
-                    else if(obj.estado == false){
-                        $("#error").text("Error al iniciar sesion");
-                        $("#error").css("color","red");
-                    }
-                });
-            }
-        });
-    });
-</script>
 
 </html>
