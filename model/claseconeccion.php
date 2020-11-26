@@ -56,7 +56,7 @@ class Conection{
         $statement->bindParam(14,$cirugias_y_accidentes);
 
         if($statement->execute()){
-            return "Perfil creado";
+            return "Perfil creado exitosamente";
         }
         else{
             return "Perfil no creado";
