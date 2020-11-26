@@ -2,12 +2,13 @@
 <html lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
-    <meta name="author" content="">
-
     <title>Registrarse - Master Clinician</title>
+		<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
 	
     <!-- css -->
     <link href="../css/bootstrap.min.css" rel="stylesheet" type="text/css">
@@ -77,7 +78,6 @@
 				<div class="row">
 					<div class="col-xl">
 					<div class="wow fadeInDown" data-wow-offset="0" data-wow-delay="0.1s">
-
 					</div>
 					<div class="col-xl">
 						<div class="form-wrapper">
@@ -87,173 +87,158 @@
 							<div class="panel-heading">
 									<h3 class="panel-title"><span class="fa fa-pencil-square-o"></span> Registrarse</h3>
 									</div>
-									<div class="panel-body">
-									<form role="form" class="lead">
-										<div class="row">
+									<div class="row">
 											<div class="col-xs-6 col-sm-6 col-md-6">
 												<div class="form-group">
 													<label>Correo electrónico</label>
-													<input type="email" id="coreo_electronico" class="form-control input-md">
+													<input type="email" id="correo_electronico" class="form-control" required>
 												</div>
 											</div>
 											<div class="col-xs-6 col-sm-6 col-md-6">
 												<div class="form-group">
 													<label>Contraseña</label>
-													<input type="password" id="contraseña" class="form-control input-md">
+													<input type="password" id="contraseña" class="form-control" required>
 												</div>
 											</div>
 											<div class="col-xs-6 col-sm-6 col-md-6">
 												<div class="form-group">
 													<label>Confirmar contrasena</label>
-													<input type="password" id="confirmar_contraseña" class="form-control input-md">
+													<input type="password" id="confirmar_contraseña" class="form-control" required>
 												</div>
 											</div>
 											<div class="col-xs-6 col-sm-6 col-md-6">
 												<div class="form-group">
 													<label>Nombre</label>
-													<input type="text" id="nombre_completo" class="form-control input-md">
+													<input type="text" id="nombre_completo" class="form-control" required>
 												</div>
 											</div>
 											<div class="col-xs-6 col-sm-6 col-md-6">
 												<div class="form-group">
 													<label>Fecha de nacimiento</label>
-													<input type="text" id="fecha_de_nacimiento" class="form-control input-md">
+													<input type="date" id="fecha_de_nacimiento" class="form-control" required>
 												</div>
 											</div>
 											<div class="col-xs-6 col-sm-6 col-md-6">
 												<div class="form-group">
 													<label>Genero</label>
-													<input type="text" id="genero" class="form-control input-md">
+													<input type="text" id="genero" class="form-control" required>
 												</div>
 											</div>
 											<div class="col-xs-6 col-sm-6 col-md-6">
 												<div class="form-group">
 													<label>Tipo de sangre</label>
-													<input type="text" id="tipo_de_sangre" class="form-control input-md">
+													<input type="text" id="tipo_de_sangre" class="form-control" required>
 												</div>
 											</div>
 											<div class="col-xs-6 col-sm-6 col-md-6">
 												<div class="form-group">
 													<label>Peso</label>
-													<input type="text" id="peso" class="form-control input-md">
+													<input type="text" id="peso" class="form-control" required>
 												</div>
 											</div>
 											<div class="col-xs-6 col-sm-6 col-md-6">
 												<div class="form-group">
 													<label>Estatura</label>
-													<input type="text" id="estatura" class="form-control input-md">
+													<input type="text" id="estatura" class="form-control" required>
 												</div>
 											</div>
 											<div class="col-xs-6 col-sm-6 col-md-6">
 												<div class="form-group">
 													<label>Dirección</label>
-													<input type="text" id="direccion" class="form-control input-md">
+													<input type="text" id="direccion" class="form-control" required>
 												</div>
 											</div>
 											<div class="col-xs-6 col-sm-6 col-md-6">
 												<div class="form-group">
 													<label>Telefono</label>
-													<input type="text" id="telefono_de_casa" class="form-control input-md">
+													<input type="text" id="telefono_de_casa" class="form-control" required>
 												</div>
 											</div>
 											<div class="col-xs-6 col-sm-6 col-md-6">
 												<div class="form-group">
 													<label>Telefono movil</label>
-													<input type="text" id="telefono_movil" class="form-control input-md">
+													<input type="text" id="telefono_movil" class="form-control" required>
 												</div>
 											</div>
 											<div class="col-xs-6 col-sm-6 col-md-6">
 												<div class="form-group">
 													<label>Enfermedades</label>
-													<input type="text" id="enfermedades" class="form-control input-md">
+													<input type="text" id="enfermedades" class="form-control" required>
 												</div>
 											</div>
 											<div class="col-xs-6 col-sm-6 col-md-6">
 												<div class="form-group">
 													<label>Alergias</label>
-													<input type="text" id="alergias" class="form-control input-md">
+													<input type="text" id="alergias" class="form-control" required>
 												</div>
 											</div>
 											<div class="col-xs-6 col-sm-6 col-md-6">
 												<div class="form-group">
 													<label>Cirugias y/o accidentes</label>
-													<input type="text" id="cirugias_y_accidentes" class="form-control input-md">
+													<input type="text" id="cirugias_y_accidentes" class="form-control" required>
 												</div>
 											</div>
 										</div>
 										
-										<input type="button" id="button" value="Registrate" class="btn btn-skin btn-block btn-lg">
+										<button type="text" id="button" class="btn btn-primary btn-skin btn-block btn-lg">Registrate</button>
 									
-									</form>
-								</div>
+							
 							</div>				
 						
 						</div>
 						</div>
 					</div>
-					<script>
-						
-							$("#button").click(function(){ 
-		
-								/*var correo_electronico = $("#email").val();
-								var contraseña = $("#contraseña").val();
-								var nombre_completo= $("#nombre_completo").val();
-								var fecha_de_nacimiento = $("#fecha_de_nacimiento").val();
-								var genero = $("#genero").val();
-								var tipo_de_sangre = $("#tipo_de_sangre").val();
-								var peso = $("#peso").val();
-								var estatura = $("#estatura").val();
-								var direccion = $("#direccion").val();
-								var telefono_de_casa = $("#telefono_de_casa").val();
-								var telefono_movil = $("#telefono_movil").val();
-								var enfermedades = $("#enfermedades").val();
-								var alergias = $("#alergias").val();
-								var cirugias_y_accidentes = $("#cirugias_y_accidentes").val();*/
+<script>
+	$("#button").click(function(){ 
+	
 
-								var contraseña = document.getElementById('contraseña').value;
-								var nombre_completo = document.getElementById('nombre_completo').value;
-								var fecha_de_nacimiento = document.getElementById('fecha_de_nacimiento').value;
-								var genero = document.getElementById('genero').value;
-								var tipo_de_sangre = document.getElementById('tipo_de_sangre').value;
-								var peso = document.getElementById('peso').value;
-								var estatura = document.getElementById('estatura').value;
-								var direccion = document.getElementById('direccion').value;
-								var telefono_de_casa = document.getElementById('telefono_de_casa').value;
-								var telefono_movil = document.getElementById('telefono_movil ').value;
-								var enfermedades = document.getElementById('enfermedades').value;
-								var alergias = document.getElementById('alergias').value;
-								var cirugias_y_accidentes = document.getElementById('cirugias_y_accidentes').value;
+		var correo_electronico = document.getElementById('correo_electronico').value;
+		var contraseña = document.getElementById('contraseña').value;
+		var nombre_completo = document.getElementById('nombre_completo').value;
+		var fecha_de_nacimiento = document.getElementById('fecha_de_nacimiento').value;
+		var genero = document.getElementById('genero').value;
+		var tipo_de_sangre = document.getElementById('tipo_de_sangre').value;
+		var peso = document.getElementById('peso').value;
+		var estatura = document.getElementById('estatura').value;
+		var direccion = document.getElementById('direccion').value;
+		var telefono_de_casa = document.getElementById('telefono_de_casa').value;
+		var telefono_movil = document.getElementById('telefono_movil').value;
+		var enfermedades = document.getElementById('enfermedades').value;
+		var alergias = document.getElementById('alergias').value;
+		var cirugias_y_accidentes = document.getElementById('cirugias_y_accidentes').value;
 
 
 
 
-								$.post("../controller/insert.php",
-								{
-									corero_electronico: corero_electronico,
-									contraseña: contraseña,   
-									nombre_completo: nombre_completo,
-									fecha_de_nacimiento: fecha_de_nacimiento,
-									genero: genero,
-									tipo_de_sangre: tipo_de_sangre,
-									peso: peso,
-									estatura: estatura,
-									direccion: direccion,
-									telefono_de_casa:telefono_de_casa,
-									enfermedades: enfermedades,
-									alergias: alergias,
-									cirugias_y_accidentes: cirugias_y_accidentes
-								},
-								function(data,status){
-									console.log(status);
-									console.log(data);
+		$.post("../controller/insert.php",
+		{
+			correo_electronico: correo_electronico,
+			contraseña: contraseña,   
+			nombre_completo: nombre_completo,
+			fecha_de_nacimiento: fecha_de_nacimiento,
+			genero: genero,
+			tipo_de_sangre: tipo_de_sangre,
+			peso: peso,
+			estatura: estatura,
+			direccion: direccion,
+			telefono_de_casa:telefono_de_casa,
+			telefono_movil: telefono_movil,
+			enfermedades: enfermedades,
+			alergias: alergias,
+			cirugias_y_accidentes: cirugias_y_accidentes
+		},
+		function(data,status){
+			console.log(status);
+			console.log(data);
 
-									alert(data);
+			alert(data);
 
-								});
+		});
 
 
-							});
-					</script>					
+	});
+							
+</script>					
 				</div>		
 			</div>
 		</div>		
@@ -363,7 +348,7 @@
 <a href="#" class="scrollup"><i class="fa fa-angle-up active"></i></a>
 
 	<!-- Core JavaScript Files -->
-    <!--<script src="../js/jquery.min.js"></script>	 
+    <script src="../js/jquery.min.js"></script>	 
     <script src="../js/bootstrap.min.js"></script>
     <script src="../js/jquery.easing.min.js"></script>
 	<script src="../js/wow.min.js"></script>
@@ -373,7 +358,7 @@
 	<script src="../plugins/cubeportfolio/js/jquery.cubeportfolio.min.js"></script>
 	<script src="../js/owl.carousel.min.js"></script>
 	<script src="../js/nivo-lightbox.min.js"></script>
-    <script src="../js/custom.js"></script>-->
+    <script src="../js/custom.js"></script>
 
 
 </body>

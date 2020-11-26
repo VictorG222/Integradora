@@ -38,7 +38,7 @@ class Conection{
 
     public function insertPaciente($nombre_completo, $fecha_de_nacimiento, $genero, $tipo_de_sangre, $peso, $estatura, $direccion, $correo_electronico, $contraseña, $telefono_de_casa, $telefono_movil, $enfermedades, $alergias, $cirugias_y_accidentes){
 
-        $sql = "CALL web_sp_insertpaciente(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+        $sql = "CALL web_sp_insertpaciente(?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
         $statement = $this->conn->prepare($sql);
         $statement->bindParam(1,$nombre_completo);
         $statement->bindParam(2,$fecha_de_nacimiento);
