@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
-
+<meta charset = "UTF-8" />
+	
 <head>
     <title>Registrarse - Master Clinician</title>
 		<meta charset="utf-8">
