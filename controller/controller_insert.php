@@ -19,6 +19,6 @@ if ($_SERVER['REQUEST_METHOD']=="POST"){
 
     require_once("../model/claseconeccion.php");
     $obj = new Conection();
-    $resultado = $obj->insertPaciente($nombre_completo, $fecha_de_nacimiento, $genero, $tipo_de_sangre, $peso, $estatura, $direccion, $correo_electronico, $contraseña, $telefono_de_casa, $telefono_movil, $enfermedades, $alergias, $cirugias_y_accidentes);
+    $resultado = $obj->insertPaciente($paciente_id, $nombre_completo, $fecha_de_nacimiento, $genero, $tipo_de_sangre, $peso, $estatura, $direccion, $correo_electronico, $contraseña, $telefono_de_casa, $telefono_movil, $enfermedades, $alergias, $cirugias_y_accidentes);
     echo json_encode($resultado);
 }   

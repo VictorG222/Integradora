@@ -95,8 +95,15 @@
 										<div class="row">
 											<div class="col-xs-6 col-sm-6 col-md-6">
 												<div class="form-group">
+													<label>Identificacion</label>
+													<input type="text" id="paciente_id" class="form-control input-md">
+													 	
+												</div>
+											</div>
+											<div class="col-xs-6 col-sm-6 col-md-6">
+												<div class="form-group">
 													<label>Correo electrónico</label>
-													<input type="text" id="email" class="form-control input-md">
+													<input type="text" id="correo_electronico" class="form-control input-md">
 													 	
 												</div>
 											</div>
@@ -110,14 +117,14 @@
 											<div class="col-xs-6 col-sm-6 col-md-6">
 												<div class="form-group">
 													<label>Nombre</label>
-													<input type="text" id="nombre" class="form-control input-md">
+													<input type="text" id="nombre_completo" class="form-control input-md">
 													 
 												</div>
 											</div>
 											<div class="col-xs-6 col-sm-6 col-md-6">
 												<div class="form-group">
 													<label>Fecha de nacimiento</label>	
-													<input type="date" id="fecha_de_nacimiento" class="form-control input-md">
+													<input type="text" id="fecha_de_nacimiento" class="form-control input-md">
 													 
 												</div>
 											</div>
@@ -192,14 +199,11 @@
 												</div>
 											</div>
 										</div>
-										<a href="#" class="btn btn-skin btn-xs">Actualizar</a>
+										<button type="submit" id="button" class="btn btn-primary">Actualizar datos</button>
 									
 									</form>
 								</div>
-							</div>	
-<script>
-</script>			
-						
+							</div>		
 						</div>
 						</div>
 					</div>					
@@ -207,43 +211,6 @@
 			</div>
 		</div>		
 	</section>
-<script>
-   function listar(){
-
-       $.get("../controller/listarpaciente.php", function(data, status){
-			
-              console.log(data);
-              var myObj = JSON.parse(data);
-              console.log(myObj);
-              var txt ="";
-              var i = 0;
-
-                txt += "<table class='table-responsive'>" +
-                          "<thead>" +
-                            "<tr>" +
-                              "<th>id</th>" + 
-                              "<th>Email</th>" +
-                            "</tr>" +
-                          "</thead>" +
-                          "<tbody>";
-
-             for (;myObj[i];) {
-
-               txt += "<tr><td>" + myObj[i].idcustomers + "</td>" +
-                       "<td>" + myObj[i].email + "</td></tr>";
-                i++;
-             }
-              
-              txt += " </tbody>" +
-                      "</table>";
-              document.getElementById("demo").innerHTML = txt;
-
-      });
-
-   }
-            
-</script>
-	
 
 	<footer>
 	
@@ -363,5 +330,63 @@
 
 
 </body>
+<script>
+$(document).ready(function(){
+	$("#button").click(function(){
+		var paciente_id = $("#paciete_id").val;
+		var correo_electronico = $("#correo_electronico").val;
+		var contraseña = $("#contraseña").val;
+		var nombre_completo = $("#nombre_completo").val;
+		var fecha_de_nacimiento= $("#fecha_de_nacimiento").val;
+		var genero= $("#genero").val;
+		var tipo_de_sangre= $("#tipo_de_sangre").val;
+		var peso = $("#peso").val;
+		var estatura = $("#estatura").val;
+		var direccion = $("#direccion").val;
+		var telefono_de_casa = $("#telefono_de_casa").val;
+		var telefono_movil = $("#telefono_movil").val;
+		var	 enfermedades = $("#enfermedades").val;
+		var alergias = $("#alergias").val;
+		var cirugias_y_accidentes = $("#cirugias_y_accidentes").val;
+
+		if(paciente_id == ""){
+			alert('Favor de escribir el Identificador');
+		}
+		else{
+			$.post("../controller/controller_update.php",
+			{
+				paciente_id: paciente_id,
+				correo_electronico: correo_electronico,
+				contraseña: contraseña,
+				nombre_completo: nombre_completo,
+				fecha_de_nacimiento: fecha_de_nacimiento,
+				genero: genero,
+				tipo_de_sangre: tipo_de_sangre,
+				peso: peso,
+				estatura: estatura,
+				direccion: direccion,
+				telefono_de_casa: telefono_de_casa,
+				telefono_movil: telefono_movil,
+				enfermedades: enfermedades,
+				alergias: alergias,
+				cirugias_y_accidentes: cirugias_y_accidentes
+			},
+			function(data,status){
+				console.log(data);
+				$obj = JSON.parse(data);
+				if($obj == false){
+					alert("No hay cambios que realizar o no se encontro el perfil");
+				}
+				else if($obj == true){
+					alert("Datos cambiados correctamente");
+				}
+				else{
+					alert("Error inesperado registrado. Intente de nuevo");
+				}
+			});
+		}
+	});
+ });
+</script>
 
 </html>

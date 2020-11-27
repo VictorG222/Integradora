@@ -99,43 +99,10 @@ class Conection{
         
     }
 
-    public function listarcitas(){
-        $sql = "CALL web_sp_citaslist(?)";
-        $statement = $this->conn->prepare($sql);
-        
 
-        $statement->bindParam(1,$correo_electronico);
-        
-        if($statement->execute()){
+    public function updatePaciente($paciente_id, $nombre_completo, $fecha_de_nacimiento, $genero, $tipo_de_sangre, $peso, $estatura, $direccion, $correo_electronico, $contraseña, $telefono_de_casa, $telefono_movil, $enfermedades, $alergias, $cirugias_y_accidentes){
 
-            $result = $statement->fetchAll(PDO::FETCH_ASSOC);
-            return $result;
-
-        }
-    }
-
-
-    function delete(){
-
-        $sql = "CALL web_sp_delete(?)";
-        $statement = $this->conn->prepare($sql);
-        $statement->bindParam(1,$email);
-
-        if($statement->execute()){
-
-            $count=$statement->rowCount();
-            if($count){
-                return "ELIMINADO";
-            }else{
-                return "ELIMINADO";
-            }
-        }
-
-    }
-
-    public function updatePaciente($paciente_id,$nombre_completo, $fecha_de_nacimiento, $genero, $tipo_de_sangre, $peso, $estatura, $direccion, $correo_electronico, $contraseña, $telefono_de_casa, $telefono_movil, $enfermedades, $alergias, $cirugias_y_accidentes){
-
-        $sql = "CALL web_sp_insertpaciente(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+        $sql = "CALL web_sp_updatepaciente(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
         $statement = $this->conn->prepare($sql);
         $statement->bindParam(1,$paciente_id);
         $statement->bindParam(2,$nombre_completo);
