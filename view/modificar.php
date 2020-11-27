@@ -91,12 +91,11 @@
 									<h3 class="panel-title"><span class="fa fa-pencil-square-o"></span> Modificar datos</h3>
 									</div>
 									<div class="panel-body">
-									<form role="form" class="lead">
 										<div class="row">
-											<div class="col-xs-6 col-sm-6 col-md-6">
+											<div class="col-xs-12 col-sm-12 col-md-12">
 												<div class="form-group">
 													<label>Identificacion</label>
-													<input type="text" id="paciente_id" class="form-control input-md">
+													<input type="text" id="paciente_id" class="form-control input-md" placeholder="Este dato no es modificable">
 													 	
 												</div>
 											</div>
@@ -199,9 +198,11 @@
 												</div>
 											</div>
 										</div>
+										<div class="text-center">
+										<div id="error">Todos los campos son obligatorios</div>
+										</div>
 										<button type="submit" id="button" class="btn btn-primary">Actualizar datos</button>
 									
-									</form>
 								</div>
 							</div>		
 						</div>
@@ -333,26 +334,31 @@
 <script>
 $(document).ready(function(){
 	$("#button").click(function(){
-		var paciente_id = $("#paciete_id").val;
-		var correo_electronico = $("#correo_electronico").val;
-		var contraseña = $("#contraseña").val;
-		var nombre_completo = $("#nombre_completo").val;
-		var fecha_de_nacimiento= $("#fecha_de_nacimiento").val;
-		var genero= $("#genero").val;
-		var tipo_de_sangre= $("#tipo_de_sangre").val;
-		var peso = $("#peso").val;
-		var estatura = $("#estatura").val;
-		var direccion = $("#direccion").val;
-		var telefono_de_casa = $("#telefono_de_casa").val;
-		var telefono_movil = $("#telefono_movil").val;
-		var	 enfermedades = $("#enfermedades").val;
-		var alergias = $("#alergias").val;
-		var cirugias_y_accidentes = $("#cirugias_y_accidentes").val;
 
-		if(paciente_id == ""){
-			alert('Favor de escribir el Identificador');
-		}
-		else{
+		var paciente_id = document.getElementById('paciente_id').value;
+		var correo_electronico = document.getElementById('correo_electronico').value;
+		var contraseña = document.getElementById('contraseña').value;
+		var nombre_completo = document.getElementById('nombre_completo').value;
+		var fecha_de_nacimiento = document.getElementById('fecha_de_nacimiento').value;
+		var genero = document.getElementById('genero').value;
+		var tipo_de_sangre = document.getElementById('tipo_de_sangre').value;
+		var peso = document.getElementById('peso').value;
+		var estatura = document.getElementById('estatura').value;
+		var direccion = document.getElementById('direccion').value;
+		var telefono_de_casa = document.getElementById('telefono_de_casa').value;
+		var telefono_movil = document.getElementById('telefono_movil').value;
+		var enfermedades = document.getElementById('enfermedades').value;
+		var alergias = document.getElementById('alergias').value;
+		var cirugias_y_accidentes = document.getElementById('cirugias_y_accidentes').value;
+
+		
+		if (correo_electronico == "" || contraseña == "" || nombre_completo == "" || fecha_de_nacimiento == "" || genero == "" || tipo_de_sangre == "" || peso == "" || estatura == "" || direccion == "" || telefono_de_casa == "" || telefono_movil == "" || enfermedades == "" || alergias == "" || cirugias_y_accidentes == ""){
+                $("#error").text("Favor de llenar los campos");
+				$("#error").css("color","red");
+		}else if(paciente_id == ""){
+			$("#error").text("Favor de escribir el identificador");
+        	$("#error").css("color","red");
+		}else{
 			$.post("../controller/controller_update.php",
 			{
 				paciente_id: paciente_id,
@@ -375,10 +381,12 @@ $(document).ready(function(){
 				console.log(data);
 				$obj = JSON.parse(data);
 				if($obj == false){
-					alert("No hay cambios que realizar o no se encontro el perfil");
+					$("#error").text("No hay cambios que realizar o no se encontro el perfil");
+        			$("#error").css("color","red");
 				}
 				else if($obj == true){
-					alert("Datos cambiados correctamente");
+					$("#error").text("Datos cambiados");
+        			$("#error").css("color","red");
 				}
 				else{
 					alert("Error inesperado registrado. Intente de nuevo");

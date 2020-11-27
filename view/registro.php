@@ -185,7 +185,7 @@
 										</div>
 										
 										<button type="submit" id="button" class="btn btn-primary btn-skin btn-block btn-lg">Registrate</button>
-										<div id="error"></div>
+					
 									
 							
 							</div>				

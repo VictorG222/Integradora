@@ -121,6 +121,7 @@ class Conection{
         $statement->bindParam(15,$cirugias_y_accidentes);
 
         if($statement->execute()){
+
             $count=$statement->rowCount();
             if($count){
                 return true;
@@ -135,3 +136,4 @@ class Conection{
     }
 
 }
+?>

@@ -109,7 +109,6 @@
 									<h3 class="panel-title"><span class="fa fa-pencil-square-o"></span> Inicio de sesión</h3>
 									</div>
 									<div class="panel-body">
-									<form role="form" class="lead">
 										<div class="row">
 											<div class="col-xs-6 col-sm-6 col-md-6">
 												<div class="form-group">
@@ -127,7 +126,7 @@
 										
 										<button type="button" id="button" class="btn btn-primary">Iniciar sesion</button>
 										<div id="error"></div>
-									</form>
+									
 								</div>
 							</div>				
 						
