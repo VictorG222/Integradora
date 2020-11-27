@@ -2,19 +2,20 @@
 <html lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
-    <meta name="author" content="">
+<title>Modificar datos - Master Clinician</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
-    <title>Modificar datos - Master Clinician</title>
 	
     <!-- css -->
     <link href="../css/bootstrap.min.css" rel="stylesheet" type="text/css">
     <link href="../font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
 	<link rel="stylesheet" type="text/css" href="../plugins/cubeportfolio/css/cubeportfolio.min.css">
 	<link href="../css/nivo-lightbox.css" rel="stylesheet" />
-	<link href="../css/nivo-lightbox-theme/default/default.css" rel="stylesheet" type="text/css" />
+	<link href="../css/niv	o-lightbox-theme/default/default.css" rel="stylesheet" type="text/css" />
 	<link href="../css/owl.carousel.css" rel="stylesheet" media="screen" />
     <link href="../css/owl.theme.css" rel="stylesheet" media="screen" />
 	<link href="../css/animate.css" rel="stylesheet" />
@@ -51,7 +52,7 @@
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
                     <i class="fa fa-bars"></i>
                 </button>
-                <a class="navbar-brand" href="index.html">
+                <a class="navbar-brand" href="index.php">
                     <img src="../img/logo.png" alt="" width="150" height="40" />
                 </a>
             </div>
@@ -95,107 +96,109 @@
 											<div class="col-xs-6 col-sm-6 col-md-6">
 												<div class="form-group">
 													<label>Correo electrónico</label>
-													<input type="text"  id="email" class="form-control input-md">
-													<a href="#" class="btn btn-skin btn-xs">Actualizar</a>	
+													<input type="text" id="email" class="form-control input-md">
+													 	
 												</div>
 											</div>
 											<div class="col-xs-6 col-sm-6 col-md-6">
 												<div class="form-group">
 													<label>Contraseña</label>
-													<input type="text"    id="contraseña" class="form-control input-md">
-													<a href="#" class="btn btn-skin btn-xs">Actualizar</a>
+													<input type="text"id="contraseña" class="form-control input-md">
+													 
 												</div>	
 											</div>
 											<div class="col-xs-6 col-sm-6 col-md-6">
 												<div class="form-group">
 													<label>Nombre</label>
-													<input type="text"    id="nombre" class="form-control input-md">
-													<a href="#" class="btn btn-skin btn-xs">Actualizar</a>
+													<input type="text" id="nombre" class="form-control input-md">
+													 
 												</div>
 											</div>
 											<div class="col-xs-6 col-sm-6 col-md-6">
 												<div class="form-group">
-													<label>Fecha de nacimiento</label>
-													<input type="date"    id="fecha_de_nacimiento" class="form-control input-md">
-													<a href="#" class="btn btn-skin btn-xs">Actualizar</a>
+													<label>Fecha de nacimiento</label>	
+													<input type="date" id="fecha_de_nacimiento" class="form-control input-md">
+													 
 												</div>
 											</div>
 											<div class="col-xs-6 col-sm-6 col-md-6">
 												<div class="form-group">
 													<label>Genero</label>
-													<input type="text"    id="genero" class="form-control input-md">
-													<a href="#" class="btn btn-skin btn-xs">Actualizar</a>
+													<input type="text" id="genero" class="form-control input-md">
+													 
 												</div>
 											</div>
 											<div class="col-xs-6 col-sm-6 col-md-6">
 												<div class="form-group">
 													<label>Tipo de sangre</label>
-													<input type="text"    id="tipo_de_sangre" class="form-control input-md">
-													<a href="#" class="btn btn-skin btn-xs">Actualizar</a>
+													<input type="text" id="tipo_de_sangre" class="form-control input-md">
+													 
 												</div>
 											</div>
 											<div class="col-xs-6 col-sm-6 col-md-6">
 												<div class="form-group">
 													<label>Peso</label>
-													<input type="double"    id="peso" class="form-control input-md">
-													<a href="#" class="btn btn-skin btn-xs">Actualizar</a>
+													<input type="double" id="peso" class="form-control input-md">
+													 
 												</div>
 											</div>
 											<div class="col-xs-6 col-sm-6 col-md-6">
 												<div class="form-group">
 													<label>Estatura</label>
-													<input type="text"    id="estatura" class="form-control input-md">
-													<a href="#" class="btn btn-skin btn-xs">Actualizar</a>
+													<input type="text"id="estatura" class="form-control input-md">
+													 
 												</div>
 											</div>
 											<div class="col-xs-6 col-sm-6 col-md-6">
 												<div class="form-group">
 													<label>Dirección</label>
-													<input type="text"    id="direccion" class="form-control input-md">
-													<a href="#" class="btn btn-skin btn-xs">Actualizar</a>
+													<input type="text" id="direccion" class="form-control input-md">
+													 
 												</div>
 											</div>
 											<div class="col-xs-6 col-sm-6 col-md-6">
 												<div class="form-group">
 													<label>Telefono</label>
-													<input type="text"    id="telefono_de_casa" class="form-control input-md">
-													<a href="#" class="btn btn-skin btn-xs">Actualizar</a>
+													<input type="text" id="telefono_de_casa" class="form-control input-md">
+													 
 												</div>
 											</div>
 											<div class="col-xs-6 col-sm-6 col-md-6">
 												<div class="form-group">
 													<label>Telefono movil</label>
-													<input type="text"    id="telefono_movil" class="form-control input-md">
-													<a href="#" class="btn btn-skin btn-xs">Actualizar</a>
+													<input type="text" id="telefono_movil" class="form-control input-md">
+													 
 												</div>
 											</div>
 											<div class="col-xs-6 col-sm-6 col-md-6">
 												<div class="form-group">
 													<label>Enfermedades</label>
-													<input type="text"    id="enfermedades" class="form-control input-md">
-													<a href="#" class="btn btn-skin btn-xs">Actualizar</a>
+													<input type="text" id="enfermedades" class="form-control input-md">
+													 
 												</div>
 											</div>
 											<div class="col-xs-6 col-sm-6 col-md-6">
 												<div class="form-group">
 													<label>Alergias</label>
-													<input type="text"    id="alergias" class="form-control input-md">
-													<a href="#" class="btn btn-skin btn-xs">Actualizar</a>
+													<input type="text" id="alergias" class="form-control input-md">
+													 
 												</div>
 											</div>
 											<div class="col-xs-6 col-sm-6 col-md-6">
 												<div class="form-group">
 													<label>Cirugias y/o accidentes</label>
-													<input type="text"   id="cirugias_y_accidentes" class="form-control input-md">
-													<a href="#" class="btn btn-skin btn-xs">Actualizar</a>
+													<input type="text" id="cirugias_y_accidentes" class="form-control input-md">
+													 
 												</div>
 											</div>
 										</div>
-										
+										<a href="#" class="btn btn-skin btn-xs">Actualizar</a>
 									
 									</form>
 								</div>
-							</div>				
+							</div>	
+<script>
+</script>			
 						
 						</div>
 						</div>
@@ -203,7 +206,44 @@
 				</div>		
 			</div>
 		</div>		
-    </section>
+	</section>
+<script>
+   function listar(){
+
+       $.get("../controller/listarpaciente.php", function(data, status){
+			
+              console.log(data);
+              var myObj = JSON.parse(data);
+              console.log(myObj);
+              var txt ="";
+              var i = 0;
+
+                txt += "<table class='table-responsive'>" +
+                          "<thead>" +
+                            "<tr>" +
+                              "<th>id</th>" + 
+                              "<th>Email</th>" +
+                            "</tr>" +
+                          "</thead>" +
+                          "<tbody>";
+
+             for (;myObj[i];) {
+
+               txt += "<tr><td>" + myObj[i].idcustomers + "</td>" +
+                       "<td>" + myObj[i].email + "</td></tr>";
+                i++;
+             }
+              
+              txt += " </tbody>" +
+                      "</table>";
+              document.getElementById("demo").innerHTML = txt;
+
+      });
+
+   }
+            
+</script>
+	
 
 	<footer>
 	

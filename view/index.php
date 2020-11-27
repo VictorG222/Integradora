@@ -2,19 +2,20 @@
 <html lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
-    <meta name="author" content="">
-
     <title>¡Bienvenido a Master Clinician!</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
 	
     <!-- css -->
     <link href="../css/bootstrap.min.css" rel="stylesheet" type="text/css">
     <link href="../font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
 	<link rel="stylesheet" type="text/css" href="../plugins/cubeportfolio/css/cubeportfolio.min.css">
 	<link href="../css/nivo-lightbox.css" rel="stylesheet" />
-	<link href="../css/nivo-lightbox-theme/default/default.css" rel="stylesheet" type="text/css" />
+	<link href="../css/niv	o-lightbox-theme/default/default.css" rel="stylesheet" type="text/css" />
 	<link href="../css/owl.carousel.css" rel="stylesheet" media="screen" />
     <link href="../css/owl.theme.css" rel="stylesheet" media="screen" />
 	<link href="../css/animate.css" rel="stylesheet" />
@@ -24,8 +25,7 @@
 	<link id="bodybg" href="../bodybg/bg1.css" rel="stylesheet" type="text/css" />
 	<!-- template skin -->
 	<link id="t-colors" href="../color/blue.css" rel="stylesheet">
-
-
+	
 </head>
 
 <body id="page-top" data-spy="scroll" data-target=".navbar-custom">
@@ -114,18 +114,18 @@
 											<div class="col-xs-6 col-sm-6 col-md-6">
 												<div class="form-group">
 													<div class="form-group">
-														<input type="email" class="form-control" id="email" placeholder="Correo Electronico" required>
+														<input type="email" class="form-control" id="email" placeholder="Correo Electronico">
 													</div>
 												</div>
 											</div>
 											<div class="col-xs-6 col-sm-6 col-md-6">
 												<div class="form-group">
-													<input type="password" class="form-control" id="pwd" placeholder="Contraseña" required>
+													<input type="password" class="form-control" id="pwd" placeholder="Contraseña">
 												</div>	
 											</div>
 										</div>
 										
-										<button type="text" id="button" class="btn btn-primary btn-skin btn-block btn-lg">Iniciar sesion</button>
+										<button type="button" id="button" class="btn btn-primary">Iniciar sesion</button>
 										<div id="error"></div>
 									</form>
 								</div>
@@ -133,12 +133,51 @@
 						
 						</div>
 						</div>
-					</div>					
+					</div>	
+<script>
+	
+	$(document).ready(function(){
+        $("#button").click(function(){
+            var correo_electronico = $("#email").val();
+            var contraseña = $("#pwd").val();
+
+            if (correo_electronico == "" || contraseña == ""){
+                $("#error").text("Campos vacios");
+                $("#error").css("color","red");
+            }
+            else
+            {
+                $.post("../controller/controller_login.php",
+                {
+                    correo_electronico: correo_electronico,
+                    contraseña: contraseña
+                },
+                function(data,status){
+				
+                console.log(data);
+                var obj = JSON.parse(data);
+
+                    if(obj.estado == true)
+                    {
+                        window.location.replace("perfil.php");
+                    }	
+                    else if(obj.estado == false){
+                        $("#error").text("Error al iniciar sesion");
+                        $("#error").css("color","red");
+                    }
+                });
+            }
+        });
+    });
+
+</script>				
 				</div>		
 			</div>
 		</div>		
     </section>
 	
+
+
 	<!-- /Section: intro -->
 
 	<!-- Section: boxes -->
@@ -587,40 +626,5 @@
 
 
 </body>
-<script>
-	$(document).ready(function(){
-        $("#button").click(function(){
-            var correo_electronico = $("#email").val();
-            var contraseña = $("#pwd").val();
-
-            if (correo_electronico == null || contraseña == null){
-                $($error).text("Campos vacios");
-                $($error).css("color","red");
-            }
-            else
-            {
-                $.post("../controller/controller_login.php",
-                {
-                    correo_electronico: correo_electronico,
-                    contraseña: contraseña
-                },
-                function(data,status){
-				
-                
-                var obj = JSON.parse(data);
-
-                    if(obj.estado == true)
-                    {
-                        window.location.replace("Perfil.php");
-                    }
-                    else if(obj.estado == false){
-                        $("#error").text("Error al iniciar sesion");
-                        $("#error").css("color","red");
-                    }
-                });
-            }
-        });
-    });
-</script>
 
 </html>

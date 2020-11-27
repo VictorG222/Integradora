@@ -63,32 +63,13 @@ class Conection{
         }
     }
     
+    
+    public function listarPaciente($paciente_id){
 
-    public function updatePaciente($nombre_completo, $fecha_de_nacimiento, $genero, $tipo_de_sangre, $peso, $estatura, $direccion, $correo_electronico, $contraseña, $telefono_de_casa, $telefono_movil, $enfermedades, $alergias, $cirugias_y_accidentes){
-
-        $sql = "CALL web_sp_updatepaciente(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+        $sql = "CALL web_sp_pacientelist(?)";
         $statement = $this->conn->prepare($sql);
-        $statement->bindParam(1,$nombre_completo);
-        $statement->bindParam(2,$fecha_de_nacimiento);
-        $statement->bindParam(3,$genero);
-        $statement->bindParam(4,$tipo_de_sangre);
-        $statement->bindParam(5,$peso);
-        $statement->bindParam(6,$estatura);
-        $statement->bindParam(7,$direccion);
-        $statement->bindParam(8,$correo_electronico);
-        $statement->bindParam(9,$contraseña);
-        $statement->bindParam(10,$telefono_de_casa);
-        $statement->bindParam(11,$telefono_movil);
-        $statement->bindParam(12,$enfermedades);
-        $statement->bindParam(13,$enfermedades);
-        $statement->bindParam(14,$cirugias_y_accidentes);
-
-        if($statement->execute()){
-            return "Datos actualizados";
-        }
-        else{
-            return "DATOS NO ACTUALIZADOS";
-        }
+        $statement->bindParam(1,$paciente_id);
+    
 
     }
 
@@ -96,7 +77,6 @@ class Conection{
 
         $sql = "CALL web_sp_login(?,?)";
         $statement = $this->conn->prepare($sql);
-
         $statement->bindParam(1,$correo_electronico);
         $statement->bindParam(2,$contraseña);
 
@@ -122,6 +102,7 @@ class Conection{
     public function listarcitas(){
         $sql = "CALL web_sp_citaslist(?)";
         $statement = $this->conn->prepare($sql);
+        
 
         $statement->bindParam(1,$correo_electronico);
         
@@ -150,6 +131,40 @@ class Conection{
             }
         }
 
+    }
+
+    public function updatePaciente($paciente_id,$nombre_completo, $fecha_de_nacimiento, $genero, $tipo_de_sangre, $peso, $estatura, $direccion, $correo_electronico, $contraseña, $telefono_de_casa, $telefono_movil, $enfermedades, $alergias, $cirugias_y_accidentes){
+
+        $sql = "CALL web_sp_insertpaciente(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+        $statement = $this->conn->prepare($sql);
+        $statement->bindParam(1,$paciente_id);
+        $statement->bindParam(2,$nombre_completo);
+        $statement->bindParam(3,$fecha_de_nacimiento);
+        $statement->bindParam(4,$genero);
+        $statement->bindParam(5,$tipo_de_sangre);
+        $statement->bindParam(6,$peso);
+        $statement->bindParam(7,$estatura);
+        $statement->bindParam(8,$direccion);
+        $statement->bindParam(9,$correo_electronico);
+        $statement->bindParam(10,$contraseña);
+        $statement->bindParam(11,$telefono_de_casa);
+        $statement->bindParam(12,$telefono_movil);
+        $statement->bindParam(13,$enfermedades);
+        $statement->bindParam(14,$alergias);
+        $statement->bindParam(15,$cirugias_y_accidentes);
+
+        if($statement->execute()){
+            $count=$statement->rowCount();
+            if($count){
+                return true;
+            }
+            else{
+                return false;
+            }
+        }
+        else{
+            return "error";
+        }
     }
 
 }

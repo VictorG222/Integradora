@@ -16,7 +16,7 @@
     <link href="../font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
 	<link rel="stylesheet" type="text/css" href="../plugins/cubeportfolio/css/cubeportfolio.min.css">
 	<link href="../css/nivo-lightbox.css" rel="stylesheet" />
-	<link href="../css/nivo-lightbox-theme/default/default.css" rel="stylesheet" type="text/css" />
+	<link href="../css/niv	o-lightbox-theme/default/default.css" rel="stylesheet" type="text/css" />
 	<link href="../css/owl.carousel.css" rel="stylesheet" media="screen" />
     <link href="../css/owl.theme.css" rel="stylesheet" media="screen" />
 	<link href="../css/animate.css" rel="stylesheet" />
@@ -53,7 +53,7 @@
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
                     <i class="fa fa-bars"></i>
                 </button>
-                <a class="navbar-brand" href="index.html">
+                <a class="navbar-brand" href="index.php">
                     <img src="../img/logo.png" alt="" width="150" height="40" />
                 </a>
             </div>
@@ -62,7 +62,7 @@
             <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
 			  <ul class="nav navbar-nav">
 				<li class="active"><a href="#intro">Inicio</a></li>
-				<li><a href="#service">Iniciar Sesion</a></li>
+				<li><a href="index.php">Iniciar Sesion</a></li>
 				</li>
 			  </ul>
             </div>
@@ -91,97 +91,101 @@
 									<div class="row">
 											<div class="col-xs-6 col-sm-6 col-md-6">
 												<div class="form-group">
-													<label>Correo electrónico</label>
+													<label>Correo electrónico *</label>
 													<input type="email" id="correo_electronico" class="form-control" required>
 												</div>
 											</div>
 											<div class="col-xs-6 col-sm-6 col-md-6">
 												<div class="form-group">
-													<label>Contraseña</label>
+													<label>Contraseña *</label>
 													<input type="password" id="contraseña" class="form-control" required>
 												</div>
 											</div>
 											<div class="col-xs-6 col-sm-6 col-md-6">
 												<div class="form-group">
-													<label>Confirmar contrasena</label>
+													<label>Confirmar contrasena *</label>
 													<input type="password" id="confirmar_contraseña" class="form-control" required>
 												</div>
 											</div>
 											<div class="col-xs-6 col-sm-6 col-md-6">
 												<div class="form-group">
-													<label>Nombre</label>
-													<input type="text" id="nombre_completo" class="form-control" required>
+													<label>Nombre *</label>
+													<input type="text" id="nombre_completo" class="form-control" placeholder="Nombre completo" required>
 												</div>
 											</div>
 											<div class="col-xs-6 col-sm-6 col-md-6">
 												<div class="form-group">
-													<label>Fecha de nacimiento</label>
-													<input type="date" id="fecha_de_nacimiento" class="form-control" required>
+													<label>Fecha de nacimiento *</label>
+													<input type="text" id="fecha_de_nacimiento" class="form-control" placeholder="AAAA-M-DD Ej. 2000-12-01" required>
 												</div>
 											</div>
 											<div class="col-xs-6 col-sm-6 col-md-6">
 												<div class="form-group">
-													<label>Genero</label>
+													<label>Genero *</label>
 													<input type="text" id="genero" class="form-control" required>
 												</div>
 											</div>
 											<div class="col-xs-6 col-sm-6 col-md-6">
 												<div class="form-group">
-													<label>Tipo de sangre</label>
+													<label>Tipo de sangre *</label>
 													<input type="text" id="tipo_de_sangre" class="form-control" required>
 												</div>
 											</div>
 											<div class="col-xs-6 col-sm-6 col-md-6">
 												<div class="form-group">
-													<label>Peso</label>
-													<input type="text" id="peso" class="form-control" required>
+													<label>Peso *</label>
+													<input type="text" id="peso" class="form-control" placeholder="En kilogramos" required>
 												</div>
 											</div>
 											<div class="col-xs-6 col-sm-6 col-md-6">
 												<div class="form-group">
-													<label>Estatura</label>
-													<input type="text" id="estatura" class="form-control" required>
+													<label>Estatura *</label>
+													<input type="text" id="estatura" class="form-control" placeholder="En metros" required>
 												</div>
 											</div>
 											<div class="col-xs-6 col-sm-6 col-md-6">
 												<div class="form-group">
-													<label>Dirección</label>
+													<label>Dirección *</label>
 													<input type="text" id="direccion" class="form-control" required>
 												</div>
 											</div>
 											<div class="col-xs-6 col-sm-6 col-md-6">
 												<div class="form-group">
-													<label>Telefono</label>
+													<label>Telefono *</label>
 													<input type="text" id="telefono_de_casa" class="form-control" required>
 												</div>
 											</div>
 											<div class="col-xs-6 col-sm-6 col-md-6">
 												<div class="form-group">
-													<label>Telefono movil</label>
+													<label>Telefono movil *</label>
 													<input type="text" id="telefono_movil" class="form-control" required>
 												</div>
 											</div>
 											<div class="col-xs-6 col-sm-6 col-md-6">
 												<div class="form-group">
-													<label>Enfermedades</label>
+													<label>Enfermedades *</label>
 													<input type="text" id="enfermedades" class="form-control" required>
 												</div>
 											</div>
 											<div class="col-xs-6 col-sm-6 col-md-6">
 												<div class="form-group">
-													<label>Alergias</label>
+													<label>Alergias *</label>
 													<input type="text" id="alergias" class="form-control" required>
 												</div>
 											</div>
 											<div class="col-xs-6 col-sm-6 col-md-6">
 												<div class="form-group">
-													<label>Cirugias y/o accidentes</label>
+													<label>Cirugias y/o accidentes *</label>
 													<input type="text" id="cirugias_y_accidentes" class="form-control" required>
 												</div>
 											</div>
 										</div>
+										<div class="text-center">
+										<div id="error">Campos obligatorios *</div>
+										</div>
 										
 										<button type="submit" id="button" class="btn btn-primary btn-skin btn-block btn-lg">Registrate</button>
+										<div id="error"></div>
 									
 							
 							</div>				
@@ -192,9 +196,9 @@
 <script>
 	$("#button").click(function(){ 
 	
-
 		var correo_electronico = document.getElementById('correo_electronico').value;
 		var contraseña = document.getElementById('contraseña').value;
+		var confirmar_contraseña = document.getElementById('confirmar_contraseña').value;
 		var nombre_completo = document.getElementById('nombre_completo').value;
 		var fecha_de_nacimiento = document.getElementById('fecha_de_nacimiento').value;
 		var genero = document.getElementById('genero').value;
@@ -210,33 +214,44 @@
 
 
 
+		if (correo_electronico == "" || contraseña == "" || nombre_completo == "" || fecha_de_nacimiento == "" || genero == "" || tipo_de_sangre == "" || peso == "" || estatura == "" || direccion == "" || telefono_de_casa == "" || telefono_movil == "" || enfermedades == "" || alergias == "" || cirugias_y_accidentes == ""){
+                $("#error").text("Favor de llenar todos los campos");
+                $("#error").css("color","red");
+			}else if(contraseña != confirmar_contraseña){
+				$("#error").text("Las contaseñas no coinciden");
+                $("#error").css("color","red");
+			}
+			else
+            {
+				$.post("../controller/controller_insert.php",
+					{
+						correo_electronico: correo_electronico,
+						contraseña: contraseña,   
+						nombre_completo: nombre_completo,
+						fecha_de_nacimiento: fecha_de_nacimiento,
+						genero: genero,
+						tipo_de_sangre: tipo_de_sangre,
+						peso: peso,
+						estatura: estatura,
+						direccion: direccion,
+						telefono_de_casa:telefono_de_casa,
+						telefono_movil: telefono_movil,
+						enfermedades: enfermedades,
+						alergias: alergias,
+						cirugias_y_accidentes: cirugias_y_accidentes
+					},
+					function(data,status){
+							
 
-		$.post("../controller/insert.php",
-		{
-			correo_electronico: correo_electronico,
-			contraseña: contraseña,   
-			nombre_completo: nombre_completo,
-			fecha_de_nacimiento: fecha_de_nacimiento,
-			genero: genero,
-			tipo_de_sangre: tipo_de_sangre,
-			peso: peso,
-			estatura: estatura,
-			direccion: direccion,
-			telefono_de_casa:telefono_de_casa,
-			telefono_movil: telefono_movil,
-			enfermedades: enfermedades,
-			alergias: alergias,
-			cirugias_y_accidentes: cirugias_y_accidentes
-		},
-		function(data,status){
-				
+						alert(data);
 
-			alert(data);
-
-		});
-
-
+					});
+			}
+	
 	});
+
+
+	
 							
 </script>					
 				</div>		

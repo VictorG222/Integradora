@@ -1,13 +1,30 @@
+<?php
+	if(!isset($_COOKIE['sesion'])){
+		header("location: index.php");
+	}
+
+	if($_COOKIE['sesion'] != "token"){
+		header("location: index.php");
+	}
+
+
+	if($_SERVER['REQUEST_METHOD']=="POST"){
+	$correo_electronico = $_POST['correo_electronico'];
+	}
+	
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
-    <meta name="author" content="">
+<title>Perfil - Master Clinician</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
-    <title>Mi perfil - Master Clinician</title>
 	
     <!-- css -->
     <link href="../css/bootstrap.min.css" rel="stylesheet" type="text/css">
@@ -24,7 +41,6 @@
 	<link id="bodybg" href="../bodybg/bg1.css" rel="stylesheet" type="text/css" />
 	<!-- template skin -->
 	<link id="t-colors" href="../color/blue.css" rel="stylesheet">
-
 
 </head>
 
@@ -51,7 +67,7 @@
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
                     <i class="fa fa-bars"></i>
                 </button>
-                <a class="navbar-brand" href="index.html">
+                <a class="navbar-brand" href="index.php">
                     <img src="../img/logo.png" alt="" width="150" height="40" />
                 </a>
             </div>
@@ -60,7 +76,7 @@
             <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
 			  <ul class="nav navbar-nav">
 				<li><a href="modificar.php">Modificar datos</a></li>				
-				<li class="active"><a href="#intro">Cerrar sesion</a></li>
+				<li class="active"><a href="index.php">Cerrar sesión</a></li>
 
 				  </ul>
 				</li>
@@ -69,9 +85,7 @@
             <!-- /.navbar-collapse -->
         </div>
         <!-- /.container -->
-    </nav>
-	
-
+	</nav>	
 	<!-- Section: intro -->
     <section id="intro" class="intro">
 		<div class="intro-content">
@@ -93,38 +107,36 @@
 									<form role="form" class="lead">
 										<div class="row">
 											<div class="col-xs-6 col-sm-6 col-sm-6 col">
-												<div class="container">                                                                                   
-  
-												  <div class="table-responsive">
-												    <table class="table table-bordered">
-												      <thead>
-												        <tr>
-												          <th>Fecha</th>
-												          <th>Hora</th>
-												          <th>Paciente</th>
-												          <th>Medico</th>
-												          <th>Fecha de cancelacion</th>
-												        </tr>
-												      </thead>
-												      <tbody>
-												        <tr>
-												        </tr>
-												      </tbody>
-												    </table>
-												  </div>
+												<div class="container">    
+												<div class="table-responsive">
+												<table class="table table-bordered">
+													<thead>
+													<tr>
+														<th>Fecha</th>
+														<th>Hora</th>
+														<th>Paciente</th>
+														<th>Medico</th>
+														<th>Fecha de cancelacion</th>
+													</tr>
+													</thead>
+													<tbody>
+													<tr>
+													</tr>
+													</tbody>
+												</table>
 												</div>
-																						<div class="panel-body">
-																						<form role="form" class="lead">		
-																			
-																			</div>
-																			</div>
-																		</div>					
-																	</div>		
-																</div>
-															</div>		
-													    </section>
+											</div>
+										<div class="panel-body">
+										<form role="form" class="lead">	                                                            
+								</div>
+								</div>
+							</div>					
+						</div>		
+					</div>
+				</div>		
+			</section>
 	<!-- /Section: boxes -->
-	
+
 	
 	<section id="callaction" class="home-section paddingtop-40">	
            <div class="container">
@@ -443,5 +455,4 @@
 
 
 </body>
-
 </html>
