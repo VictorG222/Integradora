@@ -148,5 +148,18 @@ class Conection{
         }
     }
 
+    public function listarPacientes(){
+        $sql = "CALL web_sp_pacientelist()";
+        $statement = $this->conn->prepare($sql);
+
+        
+        if($statement->execute()){
+
+            $result = $statement->fetchAll(PDO::FETCH_ASSOC);
+            return $result;
+
+        }
+    }
+
 }
 ?>

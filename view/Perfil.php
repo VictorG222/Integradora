@@ -83,28 +83,79 @@
         </div>
         <!-- /.container -->
 	</nav>	
-	<!-- Section: intro -->
-    <section id="intro" class="intro">
-		<div class="intro-content">
-			<div class="container">
-				<div class="row">
-					<div class="col-xl">
-					<div class="wow fadeInDown" data-wow-offset="0" data-wow-delay="0.1s">
+  <!-- Section: intro -->
+  <section id="intro" class="intro">
+        <div class="intro-content">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl">
+                    <div class="wow fadeInDown" data-wow-offset="0" data-wow-delay="0.1s">
+                    </div>
+                    <div class="col-xl">
+                        <div class="form-wrapper">
+                        <div class="wow fadeInRight" data-wow-duration="2s" data-wow-delay="0.2s">
 
-					</div>
-					<div class="col-xl">
-						<div class="form-wrapper">
-						<div class="wow fadeInRight" data-wow-duration="2s" data-wow-delay="0.2s">
-							<div class="container">
-								<h2>Listar o consultas</h2>
-								<p>Consultas de la tabla customers</p>
-								<div id="demo"></div>
+                            <div class="panel panel-skin">
+                            <div class="panel-heading">
+                                    <h3 class="panel-title"><span class="fa fa-pencil-square-o"></span> Citas agendadas</h3>
+                                    </div>
+                                    <div class="panel-body">
+                                    <form role="form" class="lead">
+                                        <div class="row">
+                                            <div class="col-xs-6 col-sm-6 col-sm-6 col">
+                                               <div id="demo"></div>
+                                                </div>
+                            		<div class="panel-body">
+                                    <form role="form" class="lead">
+
+								</div>
+								</div>
 							</div>
-											
-						</div>		
+						</div>
 					</div>
-				</div>		
+				</div>
 			</section>
+<script>
+   
+   function listar(){
+
+       $.get("../controller/controller_listar_cita.php", function(data, status){
+
+			console.log(data);
+            var myObj = JSON.parse(data);
+        	console.log(myObj);
+         	var txt ="";
+            var i = 0;
+
+                txt += "<table class='table'>" +
+                          "<thead>" +
+                            "<tr>" +
+                            "<th>Fecha</th>" +
+							"<th>Hora</th>" + 
+						    "<th>Fecha de cancelacion</th>" +
+							"<th>Medico</th>" + 
+                            "</tr>" +
+                          "</thead>" +
+                          "<tbody>";
+
+             for (;myObj[i];) {
+
+               txt += "<tr><td>" + myObj[i].fecha + "</td>" +
+			   			"<td>" + myObj[i].hora + "</td>" +
+						"<td>" + myObj[i].fecha_de_cancelacion + "</td>" +
+                		"<td>" + myObj[i].nombre_completo + "</td></tr>";
+                i++;
+             }
+              
+              txt += " </tbody>" +
+                      "</table>";
+              document.getElementById("demo").innerHTML = txt;
+
+      });
+
+   }
+            
+</script>
 	<!-- /Section: boxes -->	
 	<section id="callaction" class="home-section paddingtop-40">	
            <div class="container">
