@@ -1,3 +1,5 @@
+<?php
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -60,8 +62,8 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
 			  <ul class="nav navbar-nav">
-				<li><a href="Perfil.php">Mi perfil</a></li>				
-				<li class="active"><a href="#intro">Cerrar sesion</a></li>
+				<li><a href="perfil.php">Mi perfil</a></li>				
+				<li class="active"><a href="index.php">Cerrar sesion</a></li>
 
 				  </ul>
 				</li>

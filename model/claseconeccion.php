@@ -88,7 +88,7 @@ class Conection{
             if($count){
                 $cookie_name = "sesion";
                 $cookie_value = "token";
-                setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/");
+                setcookie($cookie_name, $cookie_value, time() + (86400 * 15), "/");
                 return true;
             }
             else{
@@ -132,6 +132,19 @@ class Conection{
         }
         else{
             return "error";
+        }
+    }
+
+    public function listarCitas(){
+        $sql = "CALL web_sp_citalist()";
+        $statement = $this->conn->prepare($sql);
+
+        
+        if($statement->execute()){
+
+            $result = $statement->fetchAll(PDO::FETCH_ASSOC);
+            return $result;
+
         }
     }
 

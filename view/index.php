@@ -113,18 +113,18 @@
 											<div class="col-xs-6 col-sm-6 col-md-6">
 												<div class="form-group">
 													<div class="form-group">
-														<input type="email" class="form-control" id="email" placeholder="Correo Electronico">
+														<input type="email" class="form-control" id="email" placeholder="Correo Electronico" >
 													</div>
 												</div>
 											</div>
 											<div class="col-xs-6 col-sm-6 col-md-6">
 												<div class="form-group">
-													<input type="password" class="form-control" id="pwd" placeholder="Contraseña">
+													<input type="password" class="form-control" id="pwd" placeholder="Contraseña" >
 												</div>	
 											</div>
 										</div>
 										
-										<button type="button" id="button" class="btn btn-primary">Iniciar sesion</button>
+										<button type="submit" id="button" class="btn btn-primary">Iniciar sesion</button>
 										<div id="error"></div>
 									
 								</div>
@@ -153,7 +153,6 @@
                 },
                 function(data,status){
 				
-                console.log(data);
                 var obj = JSON.parse(data);
 
                     if(obj.estado == true)
@@ -168,6 +167,8 @@
             }
         });
     });
+
+
 
 </script>				
 				</div>		

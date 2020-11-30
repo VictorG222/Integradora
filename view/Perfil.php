@@ -5,12 +5,9 @@
 
 	if($_COOKIE['sesion'] != "token"){
 		header("location: index.php");
-	}
+	}	
 
 
-	if($_SERVER['REQUEST_METHOD']=="POST"){
-	$correo_electronico = $_POST['correo_electronico'];
-	}
 	
 ?>
 
@@ -76,7 +73,7 @@
             <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
 			  <ul class="nav navbar-nav">
 				<li><a href="modificar.php">Modificar datos</a></li>				
-				<li class="active"><a href="index.php">Cerrar sesión</a></li>
+				<li class="active"><button type="submit" id="cerrar" class="btn btn-primary">Cerrar sesion</button></li>
 
 				  </ul>
 				</li>
@@ -98,46 +95,17 @@
 					<div class="col-xl">
 						<div class="form-wrapper">
 						<div class="wow fadeInRight" data-wow-duration="2s" data-wow-delay="0.2s">
-						
-							<div class="panel panel-skin">
-							<div class="panel-heading">
-									<h3 class="panel-title"><span class="fa fa-pencil-square-o"></span> Citas agendadas</h3>
-									</div>
-									<div class="panel-body">
-									<form role="form" class="lead">
-										<div class="row">
-											<div class="col-xs-6 col-sm-6 col-sm-6 col">
-												<div class="container">    
-												<div class="table-responsive">
-												<table class="table table-bordered">
-													<thead>
-													<tr>
-														<th>Fecha</th>
-														<th>Hora</th>
-														<th>Paciente</th>
-														<th>Medico</th>
-														<th>Fecha de cancelacion</th>
-													</tr>
-													</thead>
-													<tbody>
-													<tr>
-													</tr>
-													</tbody>
-												</table>
-												</div>
-											</div>
-										<div class="panel-body">
-										<form role="form" class="lead">	                                                            
-								</div>
-								</div>
-							</div>					
+							<div class="container">
+								<h2>Listar o consultas</h2>
+								<p>Consultas de la tabla customers</p>
+								<div id="demo"></div>
+							</div>
+											
 						</div>		
 					</div>
 				</div>		
 			</section>
-	<!-- /Section: boxes -->
-
-	
+	<!-- /Section: boxes -->	
 	<section id="callaction" class="home-section paddingtop-40">	
            <div class="container">
 				<div class="row">
@@ -438,6 +406,8 @@
 	</footer>
 
 </div>
+
+
 <a href="#" class="scrollup"><i class="fa fa-angle-up active"></i></a>
 
 	<!-- Core JavaScript Files -->
@@ -455,4 +425,46 @@
 
 
 </body>
+<script>
+	function listar(){
+
+		$.get("../controller/controller_listar_cita.php", function(data, status){
+
+			console.log(data);
+			var myObj = JSON.parse(data);
+			console.log(myObj);
+			var txt ="";
+			var i = 0;
+
+				txt += "<table class='table'>" +
+						"<thead>" +
+							"<tr>" +
+							"<th>Fecha</th>" +
+								"<th>Hora</th>" + 
+								"<th>Fecha de cancelacion</th>" +  
+								"<th>Paciente</th>" +
+								"<th>Medico</th>" + 
+							"</tr>" +
+						"</thead>" +
+						"<tbody>";
+
+			for (;myObj[i];) {
+
+				txt += "<tr><td>" + myObj[i].fecha + "</td>" +
+						"<td>" + myObj[i].hora + "</td>" +
+						"<td>" + myObj[i].fecha_de_cancelacion + "</td>" +
+						"<td>" + myObj[i].nombre_completo + "</td>" +
+						"<td>" + myObj[i].nombre_completo + "</td></tr>";
+				i++;
+			}
+			
+			txt += " </tbody>" +
+					"</table>";
+			document.getElementById("demo").innerHTML = txt;
+
+		});
+
+}
+  
+</script>
 </html>
