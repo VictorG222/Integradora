@@ -1,5 +1,3 @@
-<?php
-?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -76,6 +74,15 @@
 	
 
 	<!-- Section: intro -->
+	<?php 
+		$conexion=mysqli_connect('localhost','root','','master_clinician');
+		$id = $_REQUEST['id'];
+        $sql="CALL web_sp_pacientelist($id)";
+		$result=mysqli_query($conexion,$sql);
+
+		while($mostrar=mysqli_fetch_array($result)){
+	?>
+		
     <section id="intro" class="intro">
 		<div class="intro-content">
 			<div class="container">
@@ -97,105 +104,105 @@
 											<div class="col-xs-12 col-sm-12 col-md-12">
 												<div class="form-group">
 													<label>Identificacion</label>
-													<input type="text" id="paciente_id" class="form-control input-md" placeholder="Este dato no es modificable">
+													<input type="text" id="paciente_id" class="form-control input-md" placeholder="Este dato no es modificable" value="<?php echo $mostrar['paciente_id'] ?>">
 													 	
 												</div>
 											</div>
 											<div class="col-xs-6 col-sm-6 col-md-6">
 												<div class="form-group">
 													<label>Correo electrónico</label>
-													<input type="text" id="correo_electronico" class="form-control input-md">
+													<input type="text" id="correo_electronico" class="form-control input-md" value="<?php echo $mostrar['correo_electronico']?>">
 													 	
 												</div>
 											</div>
 											<div class="col-xs-6 col-sm-6 col-md-6">
 												<div class="form-group">
 													<label>Contraseña</label>
-													<input type="text"id="contraseña" class="form-control input-md">
+													<input type="text"id="contraseña" class="form-control input-md" value="<?php echo $mostrar['contraseña'] ?>">
 													 
 												</div>	
 											</div>
 											<div class="col-xs-6 col-sm-6 col-md-6">
 												<div class="form-group">
 													<label>Nombre</label>
-													<input type="text" id="nombre_completo" class="form-control input-md">
+													<input type="text" id="nombre_completo" class="form-control input-md" value="<?php echo $mostrar['nombre_completo_paciente'] ?>">
 													 
 												</div>
 											</div>
 											<div class="col-xs-6 col-sm-6 col-md-6">
 												<div class="form-group">
 													<label>Fecha de nacimiento</label>	
-													<input type="text" id="fecha_de_nacimiento" class="form-control input-md">
+													<input type="text" id="fecha_de_nacimiento" class="form-control input-md" value="<?php echo $mostrar['fecha_de_nacimiento'] ?>">
 													 
 												</div>
 											</div>
 											<div class="col-xs-6 col-sm-6 col-md-6">
 												<div class="form-group">
 													<label>Genero</label>
-													<input type="text" id="genero" class="form-control input-md">
+													<input type="text" id="genero" class="form-control input-md" value="<?php echo $mostrar['genero'] ?>">
 													 
 												</div>
 											</div>
 											<div class="col-xs-6 col-sm-6 col-md-6">
 												<div class="form-group">
 													<label>Tipo de sangre</label>
-													<input type="text" id="tipo_de_sangre" class="form-control input-md">
+													<input type="text" id="tipo_de_sangre" class="form-control input-md" value="<?php echo $mostrar['tipo_de_sangre'] ?>">
 													 
 												</div>
 											</div>
 											<div class="col-xs-6 col-sm-6 col-md-6">
 												<div class="form-group">
 													<label>Peso</label>
-													<input type="double" id="peso" class="form-control input-md">
+													<input type="double" id="peso" class="form-control input-md" value="<?php echo $mostrar['peso'] ?>">
 													 
 												</div>
 											</div>
 											<div class="col-xs-6 col-sm-6 col-md-6">
 												<div class="form-group">
 													<label>Estatura</label>
-													<input type="text"id="estatura" class="form-control input-md">
+													<input type="text"id="estatura" class="form-control input-md" value="<?php echo $mostrar['estatura'] ?>">
 													 
 												</div>
 											</div>
 											<div class="col-xs-6 col-sm-6 col-md-6">
 												<div class="form-group">
 													<label>Dirección</label>
-													<input type="text" id="direccion" class="form-control input-md">
+													<input type="text" id="direccion" class="form-control input-md" value="<?php echo $mostrar['direccion'] ?>">
 													 
 												</div>
 											</div>
 											<div class="col-xs-6 col-sm-6 col-md-6">
 												<div class="form-group">
 													<label>Telefono</label>
-													<input type="text" id="telefono_de_casa" class="form-control input-md">
+													<input type="text" id="telefono_de_casa" class="form-control input-md" value="<?php echo $mostrar['telefono_de_casa'] ?>">
 													 
 												</div>
 											</div>
 											<div class="col-xs-6 col-sm-6 col-md-6">
 												<div class="form-group">
 													<label>Telefono movil</label>
-													<input type="text" id="telefono_movil" class="form-control input-md">
+													<input type="text" id="telefono_movil" class="form-control input-md" value="<?php echo $mostrar['telefono_movil'] ?>">
 													 
 												</div>
 											</div>
 											<div class="col-xs-6 col-sm-6 col-md-6">
 												<div class="form-group">
 													<label>Enfermedades</label>
-													<input type="text" id="enfermedades" class="form-control input-md">
+													<input type="text" id="enfermedades" class="form-control input-md" value="<?php echo $mostrar['enfermedades'] ?>">
 													 
 												</div>
 											</div>
 											<div class="col-xs-6 col-sm-6 col-md-6">
 												<div class="form-group">
 													<label>Alergias</label>
-													<input type="text" id="alergias" class="form-control input-md">
+													<input type="text" id="alergias" class="form-control input-md" value="<?php echo $mostrar['alergias'] ?>">
 													 
 												</div>
 											</div>
 											<div class="col-xs-6 col-sm-6 col-md-6">
 												<div class="form-group">
 													<label>Cirugias y/o accidentes</label>
-													<input type="text" id="cirugias_y_accidentes" class="form-control input-md">
+													<input type="text" id="cirugias_y_accidentes" class="form-control input-md" value="<?php echo $mostrar['cirugias_y_accidentes'] ?>">
 													 
 												</div>
 											</div>
@@ -213,6 +220,10 @@
 				</div>		
 			</div>
 		</div>		
+	</section>
+	<?php 
+	}
+	 ?>
 	</section>
 
 	<footer>

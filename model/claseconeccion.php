@@ -63,15 +63,7 @@ class Conection{
         }
     }
     
-    
-    public function listarPaciente($paciente_id){
 
-        $sql = "CALL web_sp_pacientelist(?)";
-        $statement = $this->conn->prepare($sql);
-        $statement->bindParam(1,$paciente_id);
-    
-
-    }
 
     function login($correo_electronico,$contraseña){
 
@@ -100,7 +92,7 @@ class Conection{
     }
 
 
-    public function updatePaciente($paciente_id, $nombre_completo, $fecha_de_nacimiento, $genero, $tipo_de_sangre, $peso, $estatura, $direccion, $correo_electronico, $contraseña, $telefono_de_casa, $telefono_movil, $enfermedades, $alergias, $cirugias_y_accidentes){
+    public function updatePaciente($paciente_id, $nombre_completo_paciente, $fecha_de_nacimiento, $genero, $tipo_de_sangre, $peso, $estatura, $direccion, $correo_electronico, $contraseña, $telefono_de_casa, $telefono_movil, $enfermedades, $alergias, $cirugias_y_accidentes){
 
         $sql = "CALL web_sp_updatepaciente(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
         $statement = $this->conn->prepare($sql);
@@ -135,31 +127,7 @@ class Conection{
         }
     }
 
-    public function listarCitas(){
-        $sql = "CALL web_sp_citalist()";
-        $statement = $this->conn->prepare($sql);
-
-        
-        if($statement->execute()){
-
-            $result = $statement->fetchAll(PDO::FETCH_ASSOC);
-            return $result;
-
-        }
-    }
-
-    public function listarPacientes(){
-        $sql = "CALL web_sp_pacientelist()";
-        $statement = $this->conn->prepare($sql);
-
-        
-        if($statement->execute()){
-
-            $result = $statement->fetchAll(PDO::FETCH_ASSOC);
-            return $result;
-
-        }
-    }
+  
 
 }
 ?>

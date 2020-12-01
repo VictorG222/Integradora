@@ -54,6 +54,8 @@ INSERT INTO `master_clinician`.`cita` (`fecha`, `hora`, `fecha_de_cancelacion`, 
 VALUES ('2021-7-04', '7:00:00', '', 2, 1);
 INSERT INTO `master_clinician`.`cita` (`fecha`, `hora`, `fecha_de_cancelacion`, `paciente`, `medico`)
 VALUES ('2021-8-04', '7:00:00', '', 2, 1);
+INSERT INTO `master_clinician`.`cita` (`fecha`, `hora`, `fecha_de_cancelacion`, `paciente`, `medico`)
+VALUES ('2021-8-04', '7:00:00', '', 1, 1);
 
 
 
@@ -64,7 +66,7 @@ DELIMITER $$
 USE `master_clinician`$$
 CREATE DEFINER=`root`@`localhost` PROCEDURE `web_sp_insertpaciente`(in _nombre_completo varchar(255), in _fecha_de_nacimiento date, in _genero varchar(12), _tipo_de_sangre varchar(5), _peso float, _estatura float, _direccion varchar(255), _correo_electronico varchar(255), _contraseña varchar(12), _telefono_de_casa varchar(12), _telefono_movil varchar(12), _enfermedades varchar(255), _alergias varchar(255), _cirugias_y_accidentes varchar(255))
 BEGIN
-INSERT INTO pacientes (nombre_completo_paciente, fecha_de_nacimiento, genero, tipo_de_sangre, peso, estatura, direccion, correo_electronico, contraseña, telefono_de_casa, telefono_movil, enfermedades, alergias, cirugias_y_accidentes) values (_nombre_completo,_fecha_de_nacimiento,_genero,_tipo_de_sangre,_peso,_estatura,_direccion,_correo_electronico,_contraseña,_telefono_de_casa,_telefono_movil,_enfermedades,_alergias,_cirugias_y_accidentes);
+INSERT INTO paciente (nombre_completo_paciente, fecha_de_nacimiento, genero, tipo_de_sangre, peso, estatura, direccion, correo_electronico, contraseña, telefono_de_casa, telefono_movil, enfermedades, alergias, cirugias_y_accidentes) values (_nombre_completo,_fecha_de_nacimiento,_genero,_tipo_de_sangre,_peso,_estatura,_direccion,_correo_electronico,_contraseña,_telefono_de_casa,_telefono_movil,_enfermedades,_alergias,_cirugias_y_accidentes);
 END$$
 
 DELIMITER ;
@@ -77,7 +79,7 @@ DELIMITER $$
 USE `master_clinician`$$
 CREATE DEFINER=`root`@`localhost` PROCEDURE `web_sp_login`(in _correo_electronico VARCHAR(255), in _contraseña VARCHAR(12))
 BEGIN
-    SELECT * FROM pacientes WHERE  correo_electronico =  _correo_electronico AND contraseña = _contraseña;
+    SELECT * FROM paciente WHERE  correo_electronico =  _correo_electronico AND contraseña = _contraseña;
 END$$
 
 DELIMITER ;
@@ -89,11 +91,12 @@ USE `master_clinician`;
 
 DELIMITER $$
 USE `master_clinician`$$
-CREATE DEFINER=`root`@`localhost` PROCEDURE `web_sp_citalist`()
+CREATE DEFINER=`root`@`localhost` PROCEDURE `web_sp_citalist`(IN _correo_electronico varchar(255))
 BEGIN
 	SELECT fecha, hora, fecha_de_cancelacion, p.paciente_id, p.nombre_completo_paciente, m.nombre_completo FROM cita c
 	INNER JOIN paciente p ON p.paciente_id = c.paciente
-	INNER JOIN medico m ON m.medico_id = c.medico;
+	INNER JOIN medico m ON m.medico_id = c.medico
+    WHERE correo_electronico = _correo_electronico;
 END$$
 
 DELIMITER ;
@@ -107,8 +110,22 @@ DELIMITER $$
 USE `master_clinician`$$
 CREATE DEFINER=`root`@`localhost` PROCEDURE `web_sp_updatepaciente`(IN _paciente_id INT(10),in _nombre_completo varchar(255), in _fecha_de_nacimiento date, in _genero varchar(12), _tipo_de_sangre varchar(5), _peso float, _estatura float, _direccion varchar(255), _correo_electronico varchar(255), _contraseña varchar(12), _telefono_de_casa varchar(12), _telefono_movil varchar(12), _enfermedades varchar(255), _alergias varchar(255), _cirugias_y_accidentes varchar(255))
 BEGIN
-UPDATE pacientes SET nombre_completo_paciente = _nombre_completo, fecha_de_nacimiento = _fecha_de_nacimiento, genero = _genero, tipo_de_sangre = _tipo_de_sangre, peso = _peso, estatura = _estatura, direccion = _direccion, correo_electronico = _correo_electronico, contraseña = _contraseña, telefono_de_casa = _telefono_de_casa, telefono_movil = _telefono_movil, enfermedades = _enfermedades, alergias = _alergias, cirugias_y_accidentes = _cirugias_y_accidentes  
+UPDATE paciente SET nombre_completo_paciente = _nombre_completo, fecha_de_nacimiento = _fecha_de_nacimiento, genero = _genero, tipo_de_sangre = _tipo_de_sangre, peso = _peso, estatura = _estatura, direccion = _direccion, correo_electronico = _correo_electronico, contraseña = _contraseña, telefono_de_casa = _telefono_de_casa, telefono_movil = _telefono_movil, enfermedades = _enfermedades, alergias = _alergias, cirugias_y_accidentes = _cirugias_y_accidentes  
 WHERE paciente_id = _paciente_id;
+END$$
+
+DELIMITER ;
+
+
+/*GALVAN VICTOR*/
+USE `master_clinician`;
+
+DELIMITER $$
+USE `master_clinician`$$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `web_sp_pacientelist`(IN _paciente_id INT(10))
+BEGIN
+	SELECT * FROM paciente
+	WHERE paciente_id = _paciente_id;
 END$$
 
 DELIMITER ;

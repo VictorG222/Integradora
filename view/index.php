@@ -27,7 +27,6 @@
 	<link id="t-colors" href="../color/blue.css" rel="stylesheet">
 	
 </head>
-
 <body id="page-top" data-spy="scroll" data-target=".navbar-custom">
 
 <div id="wrapper">
@@ -98,11 +97,9 @@
 						</div>
 						</div>
 
-
 					</div>
+					<form name="formulario" method="post" action="javascript:send()">
 					<div class="col-lg-6">
-						<div class="form-wrapper">
-						<div class="wow fadeInRight" data-wow-duration="2s" data-wow-delay="0.2s">
 						
 							<div class="panel panel-skin">
 							<div class="panel-heading">
@@ -110,22 +107,24 @@
 									</div>
 									<div class="panel-body">
 										<div class="row">
-											<div class="col-xs-6 col-sm-6 col-md-6">
-												<div class="form-group">
+											
+												<div class="col-xs-6 col-sm-6 col-md-6">
 													<div class="form-group">
-														<input type="email" class="form-control" id="email" placeholder="Correo Electronico" >
+														<div class="form-group">
+															<input type="email" id="email" placeholder="Correo Electronico" name="correo">
+													</div>
 													</div>
 												</div>
-											</div>
-											<div class="col-xs-6 col-sm-6 col-md-6">
-												<div class="form-group">
-													<input type="password" class="form-control" id="pwd" placeholder="Contraseña" >
+												<div class="col-xs-6 col-sm-6 col-md-6">
+													<div class="form-group">
+														<input type="password" class="form-control" id="pwd" placeholder="Contraseña" >
 												</div>	
-											</div>
+												</div>
+											
 										</div>
-										
-										<button type="submit" id="button" class="btn btn-primary">Iniciar sesion</button>
+										<button type="submit" id="submit">Iniciar sesion</button>
 										<div id="error"></div>
+										
 									
 								</div>
 							</div>				
@@ -133,48 +132,53 @@
 						</div>
 						</div>
 					</div>	
-<script>
-	
-	$(document).ready(function(){
-        $("#button").click(function(){
-            var correo_electronico = $("#email").val();
-            var contraseña = $("#pwd").val();
-
-            if (correo_electronico == "" || contraseña == ""){
-                $("#error").text("Campos vacios");
-                $("#error").css("color","red");
-            }
-            else
-            {
-                $.post("../controller/controller_login.php",
-                {
-                    correo_electronico: correo_electronico,
-                    contraseña: contraseña
-                },
-                function(data,status){
-				
-                var obj = JSON.parse(data);
-
-                    if(obj.estado == true)
-                    {
-                        window.location.replace("perfil.php");
-                    }	
-                    else if(obj.estado == false){
-                        $("#error").text("Error al iniciar sesion");
-                        $("#error").css("color","red");
-                    }
-                });
-            }
-        });
-    });
-
-
-
-</script>				
+					</form>	
 				</div>		
 			</div>
 		</div>		
     </section>
+<script>
+
+$(document).ready(function(){
+	$("#submit").click(function(){
+		var correo_electronico = $("#email").val();
+		var contraseña = $("#pwd").val();
+
+
+		if (correo_electronico == "" || contraseña == ""){
+			$("#error").text("Campos vacios");
+			$("#error").css("color","red");
+		}
+		else
+		{
+			$.post("../controller/controller_login.php",
+			{
+				correo_electronico: correo_electronico,
+				contraseña: contraseña
+			},
+			function(data,status){
+			
+			var obj = JSON.parse(data);
+
+				if(obj.estado == true)
+				{
+					var correo = document.getElementById('email').value;
+					window.location.replace("perfil.php?usuario=" + correo);
+				
+				}	
+				else if(obj.estado == false){
+					$("#error").text("Error al iniciar sesion");
+					$("#error").css("color","red");
+				}
+			});
+
+			
+		}
+		
+	});
+});
+
+</script>	
 	
 
 

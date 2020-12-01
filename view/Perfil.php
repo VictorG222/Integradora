@@ -7,8 +7,6 @@
 		header("location: index.php");
 	}	
 
-
-	
 ?>
 
 <!DOCTYPE html>
@@ -72,7 +70,9 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
 			  <ul class="nav navbar-nav">
-				<li><a href="modificar.php">Modificar datos</a></li>				
+			 	 <button type="submit" id="mod" class="btn btn-primary" >Modificar perfil</button>
+	
+							
 				<li class="active"><button type="submit" id="cerrar" class="btn btn-primary">Cerrar sesion</button></li>
 
 				  </ul>
@@ -100,13 +100,42 @@
                                     <h3 class="panel-title"><span class="fa fa-pencil-square-o"></span> Citas agendadas</h3>
                                     </div>
                                     <div class="panel-body">
-                                    <form role="form" class="lead">
-                                        <div class="row">
-                                            <div class="col-xs-6 col-sm-6 col-sm-6 col">
-                                               <div id="demo"></div>
-                                                </div>
+                                    	<form role="form" class="lead">
+                                       		<div class="row">
+                                            <div class="col-xs-12 col-sm-12 col-sm-12 col">
+                                            <table class="table table-bordered">
+												<tr>
+													<td>Fecha</td>
+													<td>Hora</td>
+													<td>Fecha de cancelacion</td>
+													<td>Identificacion del paciente</td>
+													<td>Paciente</td>
+													<td>Medico</td>	
+												</tr>
+
+												<?php 
+												$conexion=mysqli_connect('localhost','root','','master_clinician');
+												$correo_electronico = $_REQUEST['usuario'];	
+												$sql="CALL web_sp_citalist('$correo_electronico')";
+												$result=mysqli_query($conexion,$sql);
+												while($mostrar=mysqli_fetch_array($result)){
+												?>
+
+												<tr>
+													<td><?php echo $mostrar['fecha'] ?></td>
+													<td><?php echo $mostrar['hora'] ?></td>
+													<td><?php echo $mostrar['fecha_de_cancelacion'] ?></td>
+													<td id="paciente_id"><?php echo $mostrar['paciente_id'] ?></td>
+													<td><?php echo $mostrar['nombre_completo_paciente'] ?></td>
+													<td><?php echo $mostrar['nombre_completo'] ?></td>
+												</tr>
+											<?php 
+											}
+											?>
+											</table>
+										<form role="form" class="lead">	
                             		<div class="panel-body">
-                                    <form role="form" class="lead">
+                                    
 
 								</div>
 								</div>
@@ -116,46 +145,18 @@
 				</div>
 			</section>
 <script>
-   
-   function listar(){
 
-       $.get("../controller/controller_listar_cita.php", function(data, status){
+$(document).ready(function(){
+	$("#mod").click(function(){
+		
+		var correo_electronico = "<?php $_REQUEST['usuario'];?>";
+		window.location.replace("modificar.php?id=" + correo_electronico);
+	
+	});
+});
 
-			console.log(data);
-            var myObj = JSON.parse(data);
-        	console.log(myObj);
-         	var txt ="";
-            var i = 0;
+</script>	
 
-                txt += "<table class='table'>" +
-                          "<thead>" +
-                            "<tr>" +
-                            "<th>Fecha</th>" +
-							"<th>Hora</th>" + 
-						    "<th>Fecha de cancelacion</th>" +
-							"<th>Medico</th>" + 
-                            "</tr>" +
-                          "</thead>" +
-                          "<tbody>";
-
-             for (;myObj[i];) {
-
-               txt += "<tr><td>" + myObj[i].fecha + "</td>" +
-			   			"<td>" + myObj[i].hora + "</td>" +
-						"<td>" + myObj[i].fecha_de_cancelacion + "</td>" +
-                		"<td>" + myObj[i].nombre_completo + "</td></tr>";
-                i++;
-             }
-              
-              txt += " </tbody>" +
-                      "</table>";
-              document.getElementById("demo").innerHTML = txt;
-
-      });
-
-   }
-            
-</script>
 	<!-- /Section: boxes -->	
 	<section id="callaction" class="home-section paddingtop-40">	
            <div class="container">
