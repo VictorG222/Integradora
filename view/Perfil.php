@@ -5,7 +5,8 @@
 
 	if($_COOKIE['sesion'] != "token"){
 		header("location: index.php");
-	}	
+	}
+	
 
 ?>
 
@@ -71,7 +72,7 @@
             <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
 			  <ul class="nav navbar-nav">
 			 	 <button type="submit" id="mod" class="btn btn-primary" >Modificar perfil</button>
-	
+
 							
 				<li class="active"><button type="submit" id="cerrar" class="btn btn-primary">Cerrar sesion</button></li>
 
@@ -94,10 +95,11 @@
                     <div class="col-xl">
                         <div class="form-wrapper">
                         <div class="wow fadeInRight" data-wow-duration="2s" data-wow-delay="0.2s">
-
+							<form name="formulario" method="post" action="javascript:send()">
                             <div class="panel panel-skin">
                             <div class="panel-heading">
-                                    <h3 class="panel-title"><span class="fa fa-pencil-square-o"></span> Citas agendadas</h3>
+                                    <h3 class="panel-title" ><span class="fa fa-pencil-square-o"></span> Citas agendadas de </h3>
+									<h2 id="email2"><?php echo $_REQUEST['usuario']?></h2>
                                     </div>
                                     <div class="panel-body">
                                     	<form role="form" class="lead">
@@ -107,9 +109,8 @@
 												<tr>
 													<td>Fecha</td>
 													<td>Hora</td>
-													<td>Fecha de cancelacion</td>
-													<td>Identificacion del paciente</td>
 													<td>Paciente</td>
+													<td>Correo Electronico</td>
 													<td>Medico</td>	
 												</tr>
 
@@ -124,14 +125,17 @@
 												<tr>
 													<td><?php echo $mostrar['fecha'] ?></td>
 													<td><?php echo $mostrar['hora'] ?></td>
-													<td><?php echo $mostrar['fecha_de_cancelacion'] ?></td>
-													<td id="paciente_id"><?php echo $mostrar['paciente_id'] ?></td>
 													<td><?php echo $mostrar['nombre_completo_paciente'] ?></td>
+													<td id="email"><?php echo $mostrar['correo_electronico'];?></td>
 													<td><?php echo $mostrar['nombre_completo'] ?></td>
 												</tr>
+
+													
 											<?php 
 											}
+											
 											?>
+											
 											</table>
 										<form role="form" class="lead">	
                             		<div class="panel-body">
@@ -140,22 +144,25 @@
 								</div>
 								</div>
 							</div>
+							</form>
 						</div>
 					</div>
 				</div>
 			</section>
 <script>
-
 $(document).ready(function(){
 	$("#mod").click(function(){
 		
-		var correo_electronico = "<?php $_REQUEST['usuario'];?>";
-		window.location.replace("modificar.php?id=" + correo_electronico);
+		
+		
+		var correo = document.getElementById('email2').innerText;
+		
+		window.location.replace("modificar.php?usuario=" + correo);
 	
 	});
 });
 
-</script>	
+</script>
 
 	<!-- /Section: boxes -->	
 	<section id="callaction" class="home-section paddingtop-40">	

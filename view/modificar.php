@@ -76,8 +76,8 @@
 	<!-- Section: intro -->
 	<?php 
 		$conexion=mysqli_connect('localhost','root','','master_clinician');
-		$id = $_REQUEST['id'];
-        $sql="CALL web_sp_pacientelist($id)";
+		$usuario = $_REQUEST['usuario'];
+        $sql="CALL web_sp_pacientelist('$usuario')";
 		$result=mysqli_query($conexion,$sql);
 
 		while($mostrar=mysqli_fetch_array($result)){
@@ -101,12 +101,6 @@
 									</div>
 									<div class="panel-body">
 										<div class="row">
-											<div class="col-xs-12 col-sm-12 col-md-12">
-												<div class="form-group">
-													<label>Identificacion</label>
-													<input type="text" id="paciente_id" class="form-control input-md" placeholder="Este dato no es modificable" value="<?php echo $mostrar['paciente_id'] ?>">
-													 	
-												</div>
 											</div>
 											<div class="col-xs-6 col-sm-6 col-md-6">
 												<div class="form-group">

@@ -61,7 +61,7 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
 			  <ul class="nav navbar-nav">
-				<li class="active"><a href="#intro">Inicio</a></li>
+				<li class="active"><a href="index.php">Inicio</a></li>
 				<li><a href="index.php">Iniciar Sesion</a></li>
 				</li>
 			  </ul>
