@@ -44,8 +44,8 @@ CREATE TABLE `master_clinician`.`cita` (
   );
 
 
-INSERT INTO `master_clinician`.`paciente` (`nombre_completo_paciente`, `fecha_de_nacimiento`, `genero`, `tipo_de_sangre`, `peso`, `estatura`, `direccion`, `correo_electronico`, `contraseña`, `telefono_de_casa`, `telefono_movil`, `enfermedades`, `alergias`, `cirugias_y_accidentes`) VALUES ('Juan Meza Alvarez', '2000-11-21', 'Masculino', 'O-', '80', '1.76', 'Avenida Madero 13 y 14', 'insertauncorreoelectronico@gmail.com', '123456789', '6531326854', '653491132', 'n/a', 'n/a', 'n/a');
-INSERT INTO `master_clinician`.`paciente` (`nombre_completo_paciente`, `fecha_de_nacimiento`, `genero`, `tipo_de_sangre`, `peso`, `estatura`, `direccion`, `correo_electronico`, `contraseña`, `telefono_de_casa`, `telefono_movil`, `enfermedades`, `alergias`, `cirugias_y_accidentes`) VALUES ('Victor Manuel Galvan Covarrubias', '2000-11-02', 'Masculino', 'O+', '85', '1.7', 'Avenida Flores 30 y 31', 'victor@gmail.com', '123', '6531550633', '6532097580', 'n/a', 'Ambroxol', 'Apendicitis');
+INSERT INTO `master_clinician`.`paciente` (`nombre_completo_paciente`, `fecha_de_nacimiento`, `genero`, `tipo_de_sangre`, `peso`, `estatura`, `direccion`, `correo_electronico`, `contraseña`, `telefono_de_casa`, `telefono_movil`, `enfermedades`, `alergias`, `cirugias_y_accidentes`) VALUES ('Juan Meza Alvarez', '2000-11-21', 'Masculino', 'O-', '80', '1.76', 'Avenida Madero 13 y 14', 'insertauncorreoelectronico@gmail.com', '123456789', '6531326854', '653491132', 'N/A', 'N/A', 'N/A');
+INSERT INTO `master_clinician`.`paciente` (`nombre_completo_paciente`, `fecha_de_nacimiento`, `genero`, `tipo_de_sangre`, `peso`, `estatura`, `direccion`, `correo_electronico`, `contraseña`, `telefono_de_casa`, `telefono_movil`, `enfermedades`, `alergias`, `cirugias_y_accidentes`) VALUES ('Victor Manuel Galvan Covarrubias', '2000-11-02', 'Masculino', 'O+', '85', '1.7', 'Avenida Flores 30 y 31', 'victor@gmail.com', '123', '6531550633', '6532097580', 'N/A', 'Ambroxol', 'Apendicitis');
 
 INSERT INTO `master_clinician`.`medico` (`nombre_completo`, `cedula_profesional`, `especialidad`) VALUES ('Roberto Jaime Palacio Gaxiola', '9573168492', 'Cardiología');
 INSERT INTO `master_clinician`.`medico` (`nombre_completo`, `cedula_profesional`, `especialidad`) VALUES ('Laura Silvia Perez Garcia', '7214685394', 'Cardiología');
@@ -96,7 +96,7 @@ BEGIN
 	SELECT fecha, hora, p.correo_electronico, p.nombre_completo_paciente, m.nombre_completo FROM cita c
 	INNER JOIN paciente p ON p.paciente_id = c.paciente
 	INNER JOIN medico m ON m.medico_id = c.medico
-    WHERE correo_electronico = _correo_electronico;
+    	WHERE correo_electronico = _correo_electronico;
 END$$
 
 DELIMITER ;
