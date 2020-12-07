@@ -122,7 +122,7 @@
 												</div>
 											
 										</div>
-										<button type="submit" id="submit">Iniciar sesion</button>
+										<button type="submit" id="submit">Iniciar sesión</button>
 										<div id="error"></div>
 										
 									
@@ -167,7 +167,7 @@ $(document).ready(function(){
 				
 				}	
 				else if(obj.estado == false){
-					$("#error").text("Error al iniciar sesion");
+					$("#error").text("Error al iniciar sesión");
 					$("#error").css("color","red");
 				}
 			});

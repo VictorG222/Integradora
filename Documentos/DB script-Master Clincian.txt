@@ -108,9 +108,9 @@ USE `master_clinician`;
 
 DELIMITER $$
 USE `master_clinician`$$
-CREATE DEFINER=`root`@`localhost` PROCEDURE `web_sp_updatepaciente`(in _nombre_completo varchar(255), in _fecha_de_nacimiento date, in _genero varchar(12), _tipo_de_sangre varchar(5), _peso float, _estatura float, _direccion varchar(255), _correo_electronico varchar(255), _contraseña varchar(12), _telefono_de_casa varchar(12), _telefono_movil varchar(12), _enfermedades varchar(255), _alergias varchar(255), _cirugias_y_accidentes varchar(255))
+CREATE DEFINER=`root`@`localhost` PROCEDURE `web_sp_updatepaciente`(in _nombre_completo_paciente varchar(255), in _fecha_de_nacimiento date, in _genero varchar(12), _tipo_de_sangre varchar(5), _peso float, _estatura float, _direccion varchar(255), _correo_electronico varchar(255), _contraseña varchar(12), _telefono_de_casa varchar(12), _telefono_movil varchar(12), _enfermedades varchar(255), _alergias varchar(255), _cirugias_y_accidentes varchar(255))
 BEGIN
-UPDATE paciente SET nombre_completo_paciente = _nombre_completo, fecha_de_nacimiento = _fecha_de_nacimiento, genero = _genero, tipo_de_sangre = _tipo_de_sangre, peso = _peso, estatura = _estatura, direccion = _direccion, correo_electronico = _correo_electronico, contraseña = _contraseña, telefono_de_casa = _telefono_de_casa, telefono_movil = _telefono_movil, enfermedades = _enfermedades, alergias = _alergias, cirugias_y_accidentes = _cirugias_y_accidentes  
+UPDATE paciente SET nombre_completo_paciente = _nombre_completo_paciente, fecha_de_nacimiento = _fecha_de_nacimiento, genero = _genero, tipo_de_sangre = _tipo_de_sangre, peso = _peso, estatura = _estatura, direccion = _direccion, contraseña = _contraseña, telefono_de_casa = _telefono_de_casa, telefono_movil = _telefono_movil, enfermedades = _enfermedades, alergias = _alergias, cirugias_y_accidentes = _cirugias_y_accidentes  
 WHERE correo_electronico = _correo_electronico;
 END$$
 

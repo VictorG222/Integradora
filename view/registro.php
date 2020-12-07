@@ -39,10 +39,10 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-sm-6 col-md-6">
-					<p class="bold text-left">Lunes - Viernes, 10am a 1pm, 4pm a 7pm </p>
+					<p class="bold text-left">Horario de atencion: Lunes a Viernes. De 7:00 a.m. a 1:00 p.m. por la mañana y De 4:00 p.m. a 7:00 p.m. por la tarde.</p>
 					</div>
 					<div class="col-sm-6 col-md-6">
-					<p class="bold text-right">Llámenos 534 6869</p>
+					<p class="bold text-right">Llámenos 534-6869</p>
 					</div>
 				</div>
 			</div>
@@ -62,7 +62,7 @@
             <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
 			  <ul class="nav navbar-nav">
 				<li class="active"><a href="index.php">Inicio</a></li>
-				<li><a href="index.php">Iniciar Sesion</a></li>
+				<li><a href="index.php">Iniciar sesión</a></li>
 				</li>
 			  </ul>
             </div>
@@ -215,7 +215,7 @@
 
 
 		if (correo_electronico == "" || contraseña == "" || nombre_completo == "" || fecha_de_nacimiento == "" || genero == "" || tipo_de_sangre == "" || peso == "" || estatura == "" || direccion == "" || telefono_de_casa == "" || telefono_movil == "" || enfermedades == "" || alergias == "" || cirugias_y_accidentes == ""){
-                $("#error").text("Favor de llenar todos los campos");
+                $("#error").text("Favor de llenar los campos");
                 $("#error").css("color","red");
 			}else if(contraseña != confirmar_contraseña){
 				$("#error").text("Las contaseñas no coinciden");

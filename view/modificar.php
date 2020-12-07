@@ -73,10 +73,9 @@
 
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
-			  <ul class="nav navbar-nav">
-				<li><a href="perfil.php">Mi perfil</a></li>				
-				<li class="active"><a href="index.php">Cerrar sesion</a></li>
-
+			  <ul class="nav navbar-nav">			
+				<button type="submit" id="perfil" class="btn btn-primary" >Mi perfil</button>				
+				<li class="active"><button type="submit" id="cerrar" class="btn btn-primary" style="margin-right: 10px;">Cerrar sesión</button></li>
 				  </ul>
 				</li>
 			  </ul>
@@ -85,8 +84,27 @@
         </div>
         <!-- /.container -->
     </nav>
+<script>
+$(document).ready(function(){
+	$("#perfil").click(function(){
+		
+		
+		
+		var correo = document.getElementById('correo_electronico').value;
+		
+		window.location.replace("perfil.php?usuario=" + correo);
 	
+	});
+});
 
+
+$(document).ready(function(){
+	$("#cerrar").click(function(){	
+		window.location.replace("index.php");
+	});
+});
+
+</script>
 	<!-- Section: intro -->
 	<?php 
 		$conexion=mysqli_connect('localhost','root','','master_clinician');
@@ -117,108 +135,108 @@
 										<div class="row">
 											</div>
 											<div class="col-xs-6 col-sm-6 col-md-6">
-												<div class="form-group">
+												<div class="form-group-">
 													<label>Correo electrónico</label>
-													<input type="text" id="correo_electronico" class="form-control input-md" value="<?php echo $mostrar['correo_electronico']?>">
+													<input type="text" id="correo_electronico" class="form-control input-md" value="<?php echo $mostrar['correo_electronico']?>" disabled>
 													 	
 												</div>
 											</div>
 											<div class="col-xs-6 col-sm-6 col-md-6">
 												<div class="form-group">
 													<label>Contraseña</label>
-													<input type="text"id="contraseña" class="form-control input-md" value="<?php echo $mostrar['contraseña'] ?>">
+													<input type="text"id="contraseña" class="form-control input-md" value="<?php echo $mostrar['contraseña']?>">
 													 
 												</div>	
 											</div>
 											<div class="col-xs-6 col-sm-6 col-md-6">
 												<div class="form-group">
 													<label>Nombre</label>
-													<input type="text" id="nombre_completo" class="form-control input-md" value="<?php echo $mostrar['nombre_completo_paciente'] ?>">
+													<input type="text" id="nombre_completo" class="form-control input-md" value="<?php echo $mostrar['nombre_completo_paciente']?>">
 													 
 												</div>
 											</div>
 											<div class="col-xs-6 col-sm-6 col-md-6">
 												<div class="form-group">
 													<label>Fecha de nacimiento</label>	
-													<input type="text" id="fecha_de_nacimiento" class="form-control input-md" value="<?php echo $mostrar['fecha_de_nacimiento'] ?>">
+													<input type="text" id="fecha_de_nacimiento" class="form-control input-md" value="<?php echo $mostrar['fecha_de_nacimiento']?>">
 													 
 												</div>
 											</div>
 											<div class="col-xs-6 col-sm-6 col-md-6">
 												<div class="form-group">
 													<label>Genero</label>
-													<input type="text" id="genero" class="form-control input-md" value="<?php echo $mostrar['genero'] ?>">
+													<input type="text" id="genero" class="form-control input-md" value="<?php echo $mostrar['genero']?>">
 													 
 												</div>
 											</div>
 											<div class="col-xs-6 col-sm-6 col-md-6">
 												<div class="form-group">
 													<label>Tipo de sangre</label>
-													<input type="text" id="tipo_de_sangre" class="form-control input-md" value="<?php echo $mostrar['tipo_de_sangre'] ?>">
+													<input type="text" id="tipo_de_sangre" class="form-control input-md" value="<?php echo $mostrar['tipo_de_sangre']?>">
 													 
 												</div>
 											</div>
 											<div class="col-xs-6 col-sm-6 col-md-6">
 												<div class="form-group">
 													<label>Peso</label>
-													<input type="double" id="peso" class="form-control input-md" value="<?php echo $mostrar['peso'] ?>">
+													<input type="double" id="peso" class="form-control input-md" value="<?php echo $mostrar['peso']?>">
 													 
 												</div>
 											</div>
 											<div class="col-xs-6 col-sm-6 col-md-6">
 												<div class="form-group">
 													<label>Estatura</label>
-													<input type="text"id="estatura" class="form-control input-md" value="<?php echo $mostrar['estatura'] ?>">
+													<input type="text"id="estatura" class="form-control input-md" value="<?php echo $mostrar['estatura']?>">
 													 
 												</div>
 											</div>
 											<div class="col-xs-6 col-sm-6 col-md-6">
 												<div class="form-group">
 													<label>Dirección</label>
-													<input type="text" id="direccion" class="form-control input-md" value="<?php echo $mostrar['direccion'] ?>">
+													<input type="text" id="direccion" class="form-control input-md" value="<?php echo $mostrar['direccion']?>">
 													 
 												</div>
 											</div>
 											<div class="col-xs-6 col-sm-6 col-md-6">
 												<div class="form-group">
 													<label>Telefono</label>
-													<input type="text" id="telefono_de_casa" class="form-control input-md" value="<?php echo $mostrar['telefono_de_casa'] ?>">
+													<input type="text" id="telefono_de_casa" class="form-control input-md" value="<?php echo $mostrar['telefono_de_casa']?>">
 													 
 												</div>
 											</div>
 											<div class="col-xs-6 col-sm-6 col-md-6">
 												<div class="form-group">
 													<label>Telefono movil</label>
-													<input type="text" id="telefono_movil" class="form-control input-md" value="<?php echo $mostrar['telefono_movil'] ?>">
+													<input type="text" id="telefono_movil" class="form-control input-md" value="<?php echo $mostrar['telefono_movil']?>">
 													 
 												</div>
 											</div>
 											<div class="col-xs-6 col-sm-6 col-md-6">
 												<div class="form-group">
 													<label>Enfermedades</label>
-													<input type="text" id="enfermedades" class="form-control input-md" value="<?php echo $mostrar['enfermedades'] ?>">
+													<input type="text" id="enfermedades" class="form-control input-md" value="<?php echo $mostrar['enfermedades']?>">
 													 
 												</div>
 											</div>
 											<div class="col-xs-6 col-sm-6 col-md-6">
 												<div class="form-group">
 													<label>Alergias</label>
-													<input type="text" id="alergias" class="form-control input-md" value="<?php echo $mostrar['alergias'] ?>">
+													<input type="text" id="alergias" class="form-control input-md" value="<?php echo $mostrar['alergias']?>">
 													 
 												</div>
 											</div>
 											<div class="col-xs-6 col-sm-6 col-md-6">
 												<div class="form-group">
 													<label>Cirugias y/o accidentes</label>
-													<input type="text" id="cirugias_y_accidentes" class="form-control input-md" value="<?php echo $mostrar['cirugias_y_accidentes'] ?>">
+													<input type="text" id="cirugias_y_accidentes" class="form-control input-md" value="<?php echo $mostrar['cirugias_y_accidentes']?>">
 													 
 												</div>
 											</div>
 										</div>
 										<div class="text-center">
 										<div id="error">Todos los campos son obligatorios</div>
-										</div>
 										<button type="submit" id="button" class="btn btn-primary">Actualizar datos</button>
+										</div>
 									
 								</div>
 							</div>		
@@ -358,7 +376,7 @@ $(document).ready(function(){
 
 		var correo_electronico = document.getElementById('correo_electronico').value;
 		var contraseña = document.getElementById('contraseña').value;
-		var nombre_completo = document.getElementById('nombre_completo').value;
+		var nombre_completo_paciente = document.getElementById('nombre_completo').value;
 		var fecha_de_nacimiento = document.getElementById('fecha_de_nacimiento').value;
 		var genero = document.getElementById('genero').value;
 		var tipo_de_sangre = document.getElementById('tipo_de_sangre').value;
@@ -378,10 +396,9 @@ $(document).ready(function(){
 		}else{
 			$.post("../controller/controller_update.php",
 			{
-				paciente_id: paciente_id,
 				correo_electronico: correo_electronico,
 				contraseña: contraseña,
-				nombre_completo: nombre_completo,
+				nombre_completo_paciente: nombre_completo_paciente,
 				fecha_de_nacimiento: fecha_de_nacimiento,
 				genero: genero,
 				tipo_de_sangre: tipo_de_sangre,
