@@ -1,10 +1,14 @@
 <?php
 	if(!isset($_COOKIE['sesion'])){
-		header("location: index.php");
+		header("location: ../view/index.php");
 	}
 
 	if($_COOKIE['sesion'] != "token"){
-		header("location: index.php");
+		header("location: ../view/index.php");
+	}
+
+	if(!isset($_REQUEST['usuario'])){
+		header("location: ../view/index.php");
 	}
 	
 
@@ -84,6 +88,27 @@
         </div>
         <!-- /.container -->
 	</nav>	
+<script>
+$(document).ready(function(){
+	$("#mod").click(function(){
+		
+		
+		
+		var correo = document.getElementById('email2').innerText;
+		
+		window.location.replace("modificar.php?usuario=" + correo);
+	
+	});
+});
+
+
+$(document).ready(function(){
+	$("#cerrar").click(function(){	
+		window.location.replace("index.php");
+	});
+});
+
+</script>
   <!-- Section: intro -->
   <section id="intro" class="intro">
         <div class="intro-content">
@@ -126,7 +151,7 @@
 													<td><?php echo $mostrar['fecha'] ?></td>
 													<td><?php echo $mostrar['hora'] ?></td>
 													<td><?php echo $mostrar['nombre_completo_paciente'] ?></td>
-													<td id="email"><?php echo $mostrar['correo_electronico'];?></td>
+													<td><?php echo $mostrar['correo_electronico'];?></td>
 													<td><?php echo $mostrar['nombre_completo'] ?></td>
 												</tr>
 
@@ -149,20 +174,7 @@
 					</div>
 				</div>
 			</section>
-<script>
-$(document).ready(function(){
-	$("#mod").click(function(){
-		
-		
-		
-		var correo = document.getElementById('email2').innerText;
-		
-		window.location.replace("modificar.php?usuario=" + correo);
-	
-	});
-});
 
-</script>
 
 	<!-- /Section: boxes -->	
 	<section id="callaction" class="home-section paddingtop-40">	

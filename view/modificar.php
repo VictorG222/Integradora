@@ -1,3 +1,17 @@
+<?php
+	if(!isset($_COOKIE['sesion'])){
+		header("location: ../view/index.php");
+	}
+
+	if($_COOKIE['sesion'] != "token"){
+		header("location: ../view/index.php");
+	}
+
+	if(!isset($_REQUEST['usuario'])){
+		header("location: ../view/index.php");
+	}
+		
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -342,7 +356,6 @@
 $(document).ready(function(){
 	$("#button").click(function(){
 
-		var paciente_id = document.getElementById('paciente_id').value;
 		var correo_electronico = document.getElementById('correo_electronico').value;
 		var contraseña = document.getElementById('contraseña').value;
 		var nombre_completo = document.getElementById('nombre_completo').value;
@@ -362,9 +375,6 @@ $(document).ready(function(){
 		if (correo_electronico == "" || contraseña == "" || nombre_completo == "" || fecha_de_nacimiento == "" || genero == "" || tipo_de_sangre == "" || peso == "" || estatura == "" || direccion == "" || telefono_de_casa == "" || telefono_movil == "" || enfermedades == "" || alergias == "" || cirugias_y_accidentes == ""){
                 $("#error").text("Favor de llenar los campos");
 				$("#error").css("color","red");
-		}else if(paciente_id == ""){
-			$("#error").text("Favor de escribir el identificador");
-        	$("#error").css("color","red");
 		}else{
 			$.post("../controller/controller_update.php",
 			{

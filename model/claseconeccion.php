@@ -80,7 +80,7 @@ class Conection{
             if($count){
                 $cookie_name = "sesion";
                 $cookie_value = "token";
-                setcookie($cookie_name, $cookie_value, time() + (86400 * 15), "/");
+                setcookie($cookie_name, $cookie_value, time() + 7200, "/");
                 return true;
             }
             else{
