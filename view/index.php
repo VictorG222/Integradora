@@ -111,7 +111,7 @@
 												<div class="col-xs-6 col-sm-6 col-md-6">
 													<div class="form-group">
 														<div class="form-group">
-															<input type="email" id="email" placeholder="Correo Electronico" name="correo">
+															<input type="email"  class="form-control" id="email" placeholder="Correo Electronico" name="correo">
 													</div>
 													</div>
 												</div>
